@@ -62,12 +62,38 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\GameSparks\GameSparksRTUnity.cs" />
+    <Compile Include="Assets\GameSparks\GameSparksSettings.cs" />
+    <Compile Include="Assets\GameSparks\GameSparksUnity.cs" />
+    <Compile Include="Assets\GameSparks\Platforms\DefaultPlatform.cs" />
+    <Compile Include="Assets\GameSparks\Platforms\IControlledTimer.cs" />
+    <Compile Include="Assets\GameSparks\Platforms\IControlledWebSocket.cs" />
+    <Compile Include="Assets\GameSparks\Platforms\Native\detail\GameSparksNative.cs" />
+    <Compile Include="Assets\GameSparks\Platforms\Native\detail\GameSparksNativePINVOKE.cs" />
+    <Compile Include="Assets\GameSparks\Platforms\Native\detail\NativeWebSocket.cs" />
+    <Compile Include="Assets\GameSparks\Platforms\Native\NativePlatform.cs" />
+    <Compile Include="Assets\GameSparks\Platforms\Native\NativeWebSocket.cs" />
+    <Compile Include="Assets\GameSparks\Platforms\PlatformBase.cs" />
+    <Compile Include="Assets\GameSparks\Platforms\TimerController.cs" />
+    <Compile Include="Assets\GameSparks\Platforms\UnityTimer.cs" />
+    <Compile Include="Assets\GameSparks\Platforms\WebGL\SimpleJson2.cs" />
+    <Compile Include="Assets\GameSparks\Platforms\WebGL\WebGLPlatform.cs" />
+    <Compile Include="Assets\GameSparks\Platforms\WebGL\WebGLWebSocket.cs" />
+    <Compile Include="Assets\GameSparks\Platforms\WebSocketController.cs" />
+    <Compile Include="Assets\GameSparks\TestUI\GameSparksTestUI.cs" />
     <Compile Include="Assets\Scripts\CameraResolution.cs" />
-    <Compile Include="Assets\Scripts\Collectable.cs" />
+    <Compile Include="Assets\Scripts\Game\Collectable.cs" />
+    <Compile Include="Assets\Scripts\Game\Player.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\Server\AuthenticatePlayer.cs" />
+    <Compile Include="Assets\Scripts\Server\GameSparksManager.cs" />
+    <Compile Include="Assets\Scripts\Server\RegisterPlayer.cs" />
     <Compile Include="Assets\Scripts\SpawnManager.cs" />
     <Compile Include="Assets\Scripts\UIManager.cs" />
+    <None Include="Assets\GameSparks\Plugins\GameSparksRT.xml" />
+    <None Include="Assets\GameSparks\Plugins\Metro\GameSparksRT.xml" />
+    <None Include="Assets\GameSparks\README.txt" />
+    <None Include="Assets\GameSparks\link.xml" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
@@ -262,6 +288,18 @@
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.10f1/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle_GameSparks">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/GameSparks/Plugins/BouncyCastle_GameSparks.dll</HintPath>
+    </Reference>
+    <Reference Include="GameSparks.Api">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/GameSparks/Plugins/GameSparks.Api.dll</HintPath>
+    </Reference>
+    <Reference Include="GameSparks">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/GameSparks/Plugins/GameSparks.dll</HintPath>
+    </Reference>
+    <Reference Include="GameSparksRT">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/GameSparks/Plugins/GameSparksRT.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
       <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>

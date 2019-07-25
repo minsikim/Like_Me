@@ -302,6 +302,18 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
+    <Reference Include="BouncyCastle_GameSparks">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/GameSparks/Plugins/BouncyCastle_GameSparks.dll</HintPath>
+    </Reference>
+    <Reference Include="GameSparks.Api">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/GameSparks/Plugins/GameSparks.Api.dll</HintPath>
+    </Reference>
+    <Reference Include="GameSparks">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/GameSparks/Plugins/GameSparks.dll</HintPath>
+    </Reference>
+    <Reference Include="GameSparksRT">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/GameSparks/Plugins/GameSparksRT.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
     </Reference>
