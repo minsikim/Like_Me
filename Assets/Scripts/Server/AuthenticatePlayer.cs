@@ -17,7 +17,7 @@ public class AuthenticatePlayer : MonoBehaviour
             .Send((response) => {
                 if (!response.HasErrors)
                 {
-                    Debug.Log("Authentication Successful: "+response.UserId);
+                    Debug.Log("Authentication Successful: " + response.UserId + ", " + response.ToString());
                 }
                 else
                 {
@@ -34,7 +34,7 @@ public class AuthenticatePlayer : MonoBehaviour
             .Send((response) => {
                 if (!response.HasErrors)
                 {
-                    Debug.Log("Authentication Successful: " + response.UserId);
+                    Debug.Log("Authentication Successful: " + response.UserId+", "+response.ToString());
                 }
                 else
                 {
