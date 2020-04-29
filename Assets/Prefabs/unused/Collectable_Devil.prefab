@@ -110,5 +110,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropSpeed: 7
-  spawnPerMinute: 10
+  spawnPerSecStart: 1
+  spawnPerSecMax: 2
   collectableType: 2

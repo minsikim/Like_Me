@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,6 +11,8 @@ public class SpawnManager : MonoBehaviour
     private GameObject _collectableContainer;
     [SerializeField]
     private GameObject[] _collectablePrefabs;
+
+    private DateTime _startSpawnTime;
 
     private bool _stopSpawning = false;
     void Awake()
@@ -28,17 +31,23 @@ public class SpawnManager : MonoBehaviour
 
     IEnumerator SpawnCollectableRoutine(GameObject collectablePrefab)
     {
+        DateTime tempTime = DateTime.Now;
+
         while (!_stopSpawning)
         {
-            float spawnRate = 60 / collectablePrefab.GetComponent<Collectable>().spawnPerMinute;
-            float randomSpawn = Random.Range(spawnRate * 0.75f, spawnRate * 1.25f);
-            yield return new WaitForSeconds(randomSpawn);
+            float spawnRate = collectablePrefab.GetComponent<Collectable>().getCurrentSpawnPerSec(_startSpawnTime);
+            float randomSpawn = 1 / UnityEngine.Random.Range(spawnRate * 0.75f, spawnRate * 1.25f);
             if (!_player.GetComponent<Player>()._isDead)
             {
-                Vector3 positionSpawn = new Vector3(Random.Range(Bounds.xMin, Bounds.xMax), Bounds.yMax + 1f, 0);
+                DateTime spawnTime = DateTime.Now;
+                Debug.Log("spawnRate: "+(spawnTime - tempTime).Milliseconds + "// spawnPersec: "+spawnRate);
+                tempTime = spawnTime;
+
+                Vector3 positionSpawn = new Vector3(UnityEngine.Random.Range(Bounds.xMin, Bounds.xMax), Bounds.yMax + 1f, 0);
                 GameObject newCollectable = Instantiate(collectablePrefab, positionSpawn, Quaternion.identity);
                 newCollectable.transform.parent = _collectableContainer.transform;
             }
+            yield return new WaitForSeconds(randomSpawn);
         }
 
         //NEVER GET HERE CUZ OF INFINITE LOOP
@@ -50,6 +59,7 @@ public class SpawnManager : MonoBehaviour
     }
     public void CallSpawn()
     {
+        _startSpawnTime = DateTime.Now;
         _stopSpawning = false;
         if (_collectablePrefabs != null)
         {

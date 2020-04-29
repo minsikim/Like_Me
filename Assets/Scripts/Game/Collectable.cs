@@ -1,11 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System;
 
 public class Collectable : MonoBehaviour
 {
-    public float dropSpeed = 1f;
-    public float spawnPerMinute = 1f;
+    //위에서 아래까지 떨어지는 시간
+    public float dropToFloorSpeed = 1f;
+    public float spawnPerSecStart = 1f;
+    public float spawnPerSecMax = 2f;
+
+    private float _mapHeight = 8f;
+
     public enum CollectableType // your custom enumeration
     {
         Like,
@@ -31,8 +35,8 @@ public class Collectable : MonoBehaviour
 
     private void Drop()
     {
-        transform.Translate(Vector3.down * dropSpeed * Time.deltaTime);
-        if(transform.position.y < Bounds.yMin - 2f)
+        transform.Translate(Vector3.down * _mapHeight / dropToFloorSpeed * Time.deltaTime);
+        if (transform.position.y < Bounds.yMin - 2f)
         {
             Destroy(gameObject);
         }
@@ -63,5 +67,24 @@ public class Collectable : MonoBehaviour
                 break;
         }
         Destroy(gameObject);
+    }
+    public float getCurrentSpawnPerSec(DateTime spawnStartTime)
+    {
+        //최대까지 증가하는 시간: 30초
+        float maxGrowthSeconds = 30f;
+        float spawnPerSecDelta = spawnPerSecMax - spawnPerSecStart;
+        float lifeTime = (DateTime.Now - spawnStartTime).Seconds;
+        float growPercentage = (DateTime.Now - spawnStartTime).Seconds / maxGrowthSeconds;
+
+        if (lifeTime < 0) return spawnPerSecStart;
+
+        if (growPercentage > maxGrowthSeconds)
+        {
+            return spawnPerSecMax;
+        }
+        else
+        {
+            return (growPercentage * spawnPerSecDelta) + spawnPerSecStart;
+        }
     }
 }

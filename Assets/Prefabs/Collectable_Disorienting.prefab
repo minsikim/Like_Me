@@ -109,6 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 308ba97f070a4d94b9c40733848a319f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropSpeed: 7
-  spawnPerMinute: 10
+  dropToFloorSpeed: 3
+  spawnPerSecStart: 0.1
+  spawnPerSecMax: 0.2
   collectableType: 4

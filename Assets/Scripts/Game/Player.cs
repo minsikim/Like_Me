@@ -1,11 +1,12 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
 public class Player : MonoBehaviour
 {
-    public float _speed = 1.0f;
+    public float _direction = 0f;
+
+    public float _speed = .8f;
 
     public bool _isDead = true;
 
@@ -29,17 +30,22 @@ public class Player : MonoBehaviour
     private void CalculateMovement()
     {
 
-#if UNITY_ANDROID
-        float horizontalInput = CrossPlatformInputManager.GetAxis("Horizontal");
-#else
-        float horizontalInput = Input.GetAxis("Horizontal");
-#endif
-        if (_isDisoriented)
+        float currentDirection = 0;
+        
+        //좌우전환 계산
+        if (!_isDisoriented)
         {
-            horizontalInput = -horizontalInput;
+            currentDirection = _direction;
         }
-        transform.Translate(new Vector3(horizontalInput, 0, 0) * _speed * Time.deltaTime);
+        else
+        {
+            currentDirection = -_direction;
+        }
 
+        //움직임
+        transform.Translate(new Vector3(currentDirection, 0, 0) * _speed * Time.deltaTime);
+
+        //영역제한
         if (transform.position.x <= Bounds.xMin)
         {
             transform.position = new Vector3(Bounds.xMin, transform.position.y, 0);
@@ -76,12 +82,14 @@ public class Player : MonoBehaviour
     {
         _isDead = true;
         GameObject _spawnManager = GameObject.Find("Spawn_Manager");
+        GameManager _gameManager = GameObject.Find("Game_Manager").GetComponent<GameManager>();
         UIManager _uiManager = GameObject.Find("UI_Manager").GetComponent<UIManager>();
 
-        if (_spawnManager != null && _uiManager != null)
+        if (_spawnManager != null && _uiManager != null && _gameManager != null)
         {
             _spawnManager.GetComponent<SpawnManager>().StopSpawning();
             _uiManager.GameoverEnable();
+            _gameManager.OnGameOver();
         }
         else
         {
@@ -90,6 +98,13 @@ public class Player : MonoBehaviour
         this.gameObject.SetActive(false);
         Debug.Log("Player is Dead");
     }
+
+    public void setDirection(float directionX)
+    {
+        //오른쪽 + 왼쪽 - 제자리 0
+        _direction = directionX;
+    }
+
     IEnumerator DisorientRoutine()
     {
         _isDisoriented = true;

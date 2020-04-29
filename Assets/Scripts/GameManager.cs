@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityStandardAssets.CrossPlatformInput;
+﻿using UnityEngine;
 
 public class Bounds
 {
@@ -17,6 +14,8 @@ public class Bounds
 public class GameManager : MonoBehaviour
 {
     public static int Likes;
+    public static int Followers;
+
     [SerializeField]
     private GameObject _player;
     [SerializeField]
@@ -25,6 +24,11 @@ public class GameManager : MonoBehaviour
     private GameObject _tutorialCanvas;
     [SerializeField]
     private GameObject _uiManager;
+    [SerializeField]
+    private GameObject _controls;
+    [SerializeField]
+    private GameObject _playButton;
+
 
     public enum Level // your custom enumeration
     {
@@ -41,23 +45,26 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Bounds.xMin = -3.8f;
-        Bounds.xMax =  3.6f;
+        Bounds.xMax = 3.6f;
         Bounds.yMin = -1.8f;
-        Bounds.yMax =  6.3f;
+        Bounds.yMax = 6.3f;
         currentLevel = Level.Like100;
         _uiManager.GetComponent<UIManager>().GameoverDisable();
     }
 
     void Update()
     {
-        if ((Input.GetKeyDown("space") || Input.GetMouseButton(0)) && (_player.GetComponent<Player>()._isDead || !_player.activeInHierarchy) )
-        {
-            StartGame();
-        }
+
     }
 
     public void StartGame()
     {
+        if (!_player.GetComponent<Player>()._isDead)
+        {
+            Debug.LogError("Can not start player is still alive");
+        };
+        _controls.SetActive(true);
+        _playButton.SetActive(false);
         _uiManager.GetComponent<UIManager>().GameoverDisable();
         //Disable Tutorial Canvas
         _tutorialCanvas.SetActive(false);
@@ -72,6 +79,8 @@ public class GameManager : MonoBehaviour
     }
     public void OnGameOver()
     {
+        _controls.SetActive(false);
+        _playButton.SetActive(true);
         //Disable Tutorial Canvas
         _tutorialCanvas.SetActive(true);
         //Enable SpawnManager
@@ -83,6 +92,5 @@ public class GameManager : MonoBehaviour
     public static void AddLikes(int amount)
     {
         Likes += amount;
-        Debug.Log("Current Likes: " + Likes);
     }
 }
