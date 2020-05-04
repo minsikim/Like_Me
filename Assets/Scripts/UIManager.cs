@@ -7,6 +7,8 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField]
     private Text _likeText;
+    [SerializeField]
+    private Text _follwerText;
 
     [SerializeField]
     private GameObject _gameoverCanvas;
@@ -30,7 +32,9 @@ public class UIManager : MonoBehaviour
     }
     public void GameoverEnable()
     {
-        _gameoverText.text = GameManager.Likes + " Likes";
+        int likes = GameManager.Likes;
+        _gameoverText.text = likes.ToString();
+        _follwerText.text = DataManager.Instance.Followers.ToString();
         _gameoverCanvas.SetActive(true);
     }
     public void GameoverDisable()

@@ -80,6 +80,7 @@ public class Player : MonoBehaviour
     }
     public void OnPlayerDeath()
     {
+        _direction = 0f;
         _isDead = true;
         GameObject _spawnManager = GameObject.Find("Spawn_Manager");
         GameManager _gameManager = GameObject.Find("Game_Manager").GetComponent<GameManager>();

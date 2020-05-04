@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Bounds
 {
@@ -14,10 +16,11 @@ public class Bounds
 public class GameManager : MonoBehaviour
 {
     public static int Likes;
-    public static int Followers;
 
     [SerializeField]
     private GameObject _player;
+    [SerializeField]
+    private GameObject _collectableContainer;
     [SerializeField]
     private GameObject _spawnManager;
     [SerializeField]
@@ -81,8 +84,15 @@ public class GameManager : MonoBehaviour
     {
         _controls.SetActive(false);
         _playButton.SetActive(true);
+        //Add Followers
+        DataManager.Instance.AddFollowers(Likes);
+        //Delete all collectables from container
+        foreach(Transform p in _collectableContainer.transform)
+        {
+            GameObject.Destroy(p.gameObject);
+        }
         //Disable Tutorial Canvas
-        _tutorialCanvas.SetActive(true);
+        _tutorialCanvas.SetActive(false);
         //Enable SpawnManager
         _player.SetActive(false);
         //Enable Player
@@ -92,5 +102,13 @@ public class GameManager : MonoBehaviour
     public static void AddLikes(int amount)
     {
         Likes += amount;
+    }
+    public void ToFeedScene()
+    {
+        SceneManager.LoadScene("PlayerFeed");
+    }
+    public void ToGameScene()
+    {
+        SceneManager.LoadScene("Game");
     }
 }
