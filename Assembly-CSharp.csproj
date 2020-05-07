@@ -263,6 +263,7 @@
     <Compile Include="Assets\Scripts\DataManager.cs" />
     <Compile Include="Assets\Scripts\Game\Collectable.cs" />
     <Compile Include="Assets\Scripts\Game\Player.cs" />
+    <Compile Include="Assets\Scripts\SceneManager\FirstPlaySceneManager.cs" />
     <Compile Include="Assets\Scripts\SceneManager\GameSceneManager.cs" />
     <Compile Include="Assets\Scripts\SceneManager\PlayerFeedSceneManager.cs" />
     <Compile Include="Assets\Scripts\Server\AuthenticatePlayer.cs" />

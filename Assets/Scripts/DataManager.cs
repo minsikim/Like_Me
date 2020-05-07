@@ -8,7 +8,8 @@ public class DataManager : MonoBehaviour
 
     private const string USER_DATA_PATH = "/UserData.json";
 
-    public int Followers;
+    public int Followers = 0;
+    public string UserName = "";
 
     void Awake()
     {
@@ -43,6 +44,7 @@ public class DataManager : MonoBehaviour
             string _dataToString = System.IO.File.ReadAllText(Application.persistentDataPath + USER_DATA_PATH);
             SaveObject loadedObject = JsonUtility.FromJson<SaveObject>(_dataToString);
             Followers = loadedObject.followers;
+            UserName = loadedObject.userName;
         }
         else
         {
@@ -56,6 +58,7 @@ public class DataManager : MonoBehaviour
         SaveObject saveObject = new SaveObject
         {
             followers = Followers,
+            userName = UserName,
         };
         string _jsonData = JsonUtility.ToJson(saveObject);
         System.IO.File.WriteAllText(Application.persistentDataPath + USER_DATA_PATH, _jsonData);
@@ -64,6 +67,7 @@ public class DataManager : MonoBehaviour
     private class SaveObject
     {
         public int followers;
+        public string userName;
     }
 
 }
