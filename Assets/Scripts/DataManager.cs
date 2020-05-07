@@ -30,10 +30,11 @@ public class DataManager : MonoBehaviour
 
     public int AddFollowers(int likes)
     {
-        Followers = Followers + likes / 3;
+        int AddedFollowers = likes / 3;
+        Followers = Followers + AddedFollowers;
         SaveData();
 
-        return Followers;
+        return AddedFollowers;
     }
     private void LoadData()
     {

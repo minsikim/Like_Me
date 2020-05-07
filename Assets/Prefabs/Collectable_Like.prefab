@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3348148127913954895}
   - component: {fileID: 2650664571530061881}
   - component: {fileID: 7474457575392623628}
+  - component: {fileID: 7042433240714446287}
   m_Layer: 0
   m_Name: Collectable_Like
   m_TagString: Collectable
@@ -120,6 +121,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropToFloorSpeed: 3
-  spawnPerSecStart: 1
-  spawnPerSecMax: 2
+  gravity: 0.6
+  spawnPerSecStart: 0.9
+  spawnPerSecMax: 8
   collectableType: 0
+--- !u!50 &7042433240714446287
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3348148127913954894}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

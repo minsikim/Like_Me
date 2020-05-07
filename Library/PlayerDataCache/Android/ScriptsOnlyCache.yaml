@@ -8,12 +8,14 @@ ScriptsOnlyBuild:
     - CameraResolution
     - Collectable
     - DataManager
-    - GameManager
+    - GameLikeController
+    - GameSceneManager
     - GameSparksSettings
     - Player
     - ProfileController
     - SpawnManager
-    - UIManager
+    UnityEditor.TestRunner.dll:
+    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.EventTrigger
@@ -54,53 +56,55 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9362}
-    - Class: 114
-      Script: {instanceID: 9532}
+      Script: {instanceID: 9364}
     - Class: 114
       Script: {instanceID: 9534}
     - Class: 114
-      Script: {instanceID: 9540}
+      Script: {instanceID: 9536}
     - Class: 114
       Script: {instanceID: 9542}
     - Class: 114
-      Script: {instanceID: 9546}
+      Script: {instanceID: 9544}
     - Class: 114
-      Script: {instanceID: 9554}
+      Script: {instanceID: 9548}
     - Class: 114
-      Script: {instanceID: 9590}
+      Script: {instanceID: 9556}
     - Class: 114
       Script: {instanceID: 9592}
     - Class: 114
-      Script: {instanceID: 9678}
+      Script: {instanceID: 9594}
     - Class: 114
-      Script: {instanceID: 9682}
+      Script: {instanceID: 9680}
     - Class: 114
-      Script: {instanceID: 9690}
+      Script: {instanceID: 9684}
     - Class: 114
-      Script: {instanceID: 9722}
+      Script: {instanceID: 9692}
     - Class: 114
-      Script: {instanceID: 9728}
+      Script: {instanceID: 9724}
     - Class: 114
-      Script: {instanceID: 10068}
+      Script: {instanceID: 9730}
     - Class: 114
-      Script: {instanceID: 10202}
+      Script: {instanceID: 10070}
     - Class: 114
-      Script: {instanceID: 10268}
+      Script: {instanceID: 10204}
     - Class: 114
-      Script: {instanceID: 10320}
+      Script: {instanceID: 10270}
     - Class: 114
-      Script: {instanceID: 10434}
+      Script: {instanceID: 10322}
     - Class: 114
-      Script: {instanceID: 10540}
+      Script: {instanceID: 10436}
     - Class: 114
-      Script: {instanceID: 10856}
+      Script: {instanceID: 10542}
     - Class: 114
-      Script: {instanceID: 10932}
+      Script: {instanceID: 10858}
     - Class: 114
-      Script: {instanceID: 11212}
+      Script: {instanceID: 10934}
     - Class: 114
-      Script: {instanceID: 11224}
+      Script: {instanceID: 11214}
+    - Class: 114
+      Script: {instanceID: 11226}
+    - Class: 114
+      Script: {instanceID: 34376}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -141,47 +145,45 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9362}
-    - Class: 114
-      Script: {instanceID: 9532}
+      Script: {instanceID: 9364}
     - Class: 114
       Script: {instanceID: 9534}
     - Class: 114
-      Script: {instanceID: 9540}
+      Script: {instanceID: 9536}
     - Class: 114
-      Script: {instanceID: 9546}
+      Script: {instanceID: 9542}
     - Class: 114
-      Script: {instanceID: 9554}
+      Script: {instanceID: 9548}
     - Class: 114
-      Script: {instanceID: 9582}
+      Script: {instanceID: 9556}
     - Class: 114
-      Script: {instanceID: 9590}
+      Script: {instanceID: 9584}
     - Class: 114
       Script: {instanceID: 9592}
     - Class: 114
-      Script: {instanceID: 9678}
+      Script: {instanceID: 9594}
     - Class: 114
-      Script: {instanceID: 9682}
+      Script: {instanceID: 9680}
     - Class: 114
-      Script: {instanceID: 9690}
+      Script: {instanceID: 9684}
     - Class: 114
-      Script: {instanceID: 9722}
+      Script: {instanceID: 9692}
     - Class: 114
-      Script: {instanceID: 9728}
+      Script: {instanceID: 9724}
     - Class: 114
-      Script: {instanceID: 10068}
+      Script: {instanceID: 9730}
     - Class: 114
-      Script: {instanceID: 10202}
+      Script: {instanceID: 10070}
     - Class: 114
-      Script: {instanceID: 10268}
+      Script: {instanceID: 10204}
     - Class: 114
-      Script: {instanceID: 10320}
+      Script: {instanceID: 10322}
     - Class: 114
-      Script: {instanceID: 10540}
+      Script: {instanceID: 10542}
     - Class: 114
-      Script: {instanceID: 10932}
+      Script: {instanceID: 10934}
     - Class: 114
-      Script: {instanceID: 11174}
+      Script: {instanceID: 11176}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -525,18 +527,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: UnityStandardAssets.CrossPlatformInput
     className: TiltInput
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: UnityEngine.Advertisements.dll
-    namespaceName: UnityEngine.Advertisements
-    className: CallbackExecutor
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: UnityEngine.Advertisements.dll
-    namespaceName: UnityEngine.Advertisements.Editor
-    className: Placeholder
   - hash:
       serializedVersion: 2
       Hash: 357dc9516c87a9d2caf5c0f50c455e56
@@ -977,12 +967,6 @@ ScriptsOnlyBuild:
     className: SmoothFollow
   - hash:
       serializedVersion: 2
-      Hash: 1707a2b32372f605ba11ece2a01baa20
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: UIManager
-  - hash:
-      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.Analytics.Editor.dll
     namespaceName: UnityEditor.Analytics
@@ -1085,7 +1069,7 @@ ScriptsOnlyBuild:
     className: ExplosionFireAndDebris
   - hash:
       serializedVersion: 2
-      Hash: 367b1591158efe20ada7102abdfc2151
+      Hash: 085a5c80936e3d5d8d7cccbd88b0a503
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SpawnManager
@@ -1127,10 +1111,10 @@ ScriptsOnlyBuild:
     className: Water
   - hash:
       serializedVersion: 2
-      Hash: 6fa115bc98ddf61ff22404a1e4f63c12
+      Hash: 882588e736f37b786deaf26d1ae711b6
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: GameManager
+    className: GameSceneManager
   - hash:
       serializedVersion: 2
       Hash: 35a9693c388776aaf487636491a20f11
@@ -1433,7 +1417,7 @@ ScriptsOnlyBuild:
     className: SignalEmitter
   - hash:
       serializedVersion: 2
-      Hash: 09fb8b033dec962d0774f56b286e7a15
+      Hash: 36cea3d6e316178eef7e5930baf7be07
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Collectable
@@ -1455,9 +1439,21 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: UnityStandardAssets.Utility
     className: AutoMobileShaderSwitch
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerFeedSceneManager
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameLikeController
   platform: 13
   scenePathNames:
   - Assets/Scenes/Game.unity
   - Assets/Scenes/PlayerFeed.unity
   playerPath: "C:/Users/user/Google \uB4DC\uB77C\uC774\uBE0C/02. Project/14. Fourteenth
-    Senatus/06. Builds/20200504_v0.12_Alpha/LikeMe_v0.12.apk"
+    Senatus/06. Builds/20200507_v0.13_Alpha/LikeMe_v0.13.apk"

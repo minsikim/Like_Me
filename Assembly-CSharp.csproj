@@ -263,13 +263,14 @@
     <Compile Include="Assets\Scripts\DataManager.cs" />
     <Compile Include="Assets\Scripts\Game\Collectable.cs" />
     <Compile Include="Assets\Scripts\Game\Player.cs" />
-    <Compile Include="Assets\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Scripts\ProfileController.cs" />
+    <Compile Include="Assets\Scripts\SceneManager\GameSceneManager.cs" />
+    <Compile Include="Assets\Scripts\SceneManager\PlayerFeedSceneManager.cs" />
     <Compile Include="Assets\Scripts\Server\AuthenticatePlayer.cs" />
     <Compile Include="Assets\Scripts\Server\GameSparksManager.cs" />
     <Compile Include="Assets\Scripts\Server\RegisterPlayer.cs" />
     <Compile Include="Assets\Scripts\SpawnManager.cs" />
-    <Compile Include="Assets\Scripts\UIManager.cs" />
+    <Compile Include="Assets\Scripts\UIControllers\GameLikeController.cs" />
+    <Compile Include="Assets\Scripts\UIControllers\ProfileController.cs" />
     <None Include="Assets\GameSparks\Plugins\GameSparksRT.xml" />
     <None Include="Assets\GameSparks\Plugins\Metro\GameSparksRT.xml" />
     <None Include="Assets\GameSparks\README.txt" />

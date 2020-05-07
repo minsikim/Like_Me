@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3490953351891433632}
   - component: {fileID: 6045300377562955393}
   - component: {fileID: 8257097089098910513}
+  - component: {fileID: 6494534659572969665}
   m_Layer: 0
   m_Name: Collectable_Disorienting
   m_TagString: Collectable
@@ -110,6 +111,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropToFloorSpeed: 3
-  spawnPerSecStart: 0.1
-  spawnPerSecMax: 0.2
+  gravity: 0.6
+  spawnPerSecStart: 0.2
+  spawnPerSecMax: 0.4
   collectableType: 4
+--- !u!50 &6494534659572969665
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6169939850279446410}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

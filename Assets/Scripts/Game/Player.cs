@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     public float _direction = 0f;
 
-    public float _speed = .8f;
+    public float _speed = 1f;
 
     public bool _isDead = true;
 
@@ -31,7 +31,21 @@ public class Player : MonoBehaviour
     {
 
         float currentDirection = 0;
-        
+
+#if UNITY_EDITOR
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            _direction = 1f;
+        }else if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            _direction = -1f;
+        }
+        else
+        {
+            _direction = 0f;
+        }
+#endif
+
         //좌우전환 계산
         if (!_isDisoriented)
         {
@@ -83,13 +97,11 @@ public class Player : MonoBehaviour
         _direction = 0f;
         _isDead = true;
         GameObject _spawnManager = GameObject.Find("Spawn_Manager");
-        GameManager _gameManager = GameObject.Find("Game_Manager").GetComponent<GameManager>();
-        UIManager _uiManager = GameObject.Find("UI_Manager").GetComponent<UIManager>();
+        GameSceneManager _gameManager = GameObject.Find("Game_Scene_Manager").GetComponent<GameSceneManager>();
 
-        if (_spawnManager != null && _uiManager != null && _gameManager != null)
+        if (_spawnManager != null && _gameManager != null)
         {
             _spawnManager.GetComponent<SpawnManager>().StopSpawning();
-            _uiManager.GameoverEnable();
             _gameManager.OnGameOver();
         }
         else
@@ -115,9 +127,9 @@ public class Player : MonoBehaviour
     }
     IEnumerator SpeedUpRoutine()
     {
-        _speed = 2f;
+        _speed = _speed * 2f;
         yield return new WaitForSeconds(5f);
-        _speed = 1f;
+        _speed = _speed * 0.5f;
         Debug.Log("Player is Normal");
     }
 }

@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
     [SerializeField]
     private GameObject _player;
+
+    [SerializeField]
+    private float _maxGrowthSeconds = 30f;
     [SerializeField]
     private GameObject _collectableContainer;
     [SerializeField]
@@ -35,19 +37,19 @@ public class SpawnManager : MonoBehaviour
 
         while (!_stopSpawning)
         {
-            float spawnRate = collectablePrefab.GetComponent<Collectable>().getCurrentSpawnPerSec(_startSpawnTime);
+            float spawnRate = collectablePrefab.GetComponent<Collectable>().getCurrentSpawnPerSec(_startSpawnTime, _maxGrowthSeconds);
             float randomSpawn = 1 / UnityEngine.Random.Range(spawnRate * 0.75f, spawnRate * 1.25f);
+            yield return new WaitForSeconds(randomSpawn);
             if (!_player.GetComponent<Player>()._isDead)
             {
                 DateTime spawnTime = DateTime.Now;
-                Debug.Log("spawnRate: "+(spawnTime - tempTime).Milliseconds + "// spawnPersec: "+spawnRate);
                 tempTime = spawnTime;
 
-                Vector3 positionSpawn = new Vector3(UnityEngine.Random.Range(Bounds.xMin, Bounds.xMax), Bounds.yMax + 1f, 0);
+                Vector3 positionSpawn = new Vector3(UnityEngine.Random.Range(Bounds.xMin, Bounds.xMax), Bounds.yMax + UnityEngine.Random.Range(1f, 5f), 0);
                 GameObject newCollectable = Instantiate(collectablePrefab, positionSpawn, Quaternion.identity);
                 newCollectable.transform.parent = _collectableContainer.transform;
             }
-            yield return new WaitForSeconds(randomSpawn);
+            
         }
 
         //NEVER GET HERE CUZ OF INFINITE LOOP
