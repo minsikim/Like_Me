@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class FirstPlaySceneManager : MonoBehaviour
 {
@@ -8,18 +10,13 @@ public class FirstPlaySceneManager : MonoBehaviour
     private GameObject _userInput;
     [SerializeField]
     private GameObject _userProfiles;
-    [SerializeField]
-    
 
     private int _userProfileIndex;
 
 
     void Start()
     {
-        if(DataManager.Instance.UserName != null)
-        {
 
-        }
     }
 
     // Update is called once per frame
@@ -28,30 +25,22 @@ public class FirstPlaySceneManager : MonoBehaviour
         
     }
 
-    //public void SelectProfile(int index)
-    //{
-    //    Debug.Log(_userProfiles.transform.childCount + " " + index);
-    //    for(int i = 0; i < _userProfiles.transform.childCount; i++)
-    //    {
-    //        if(i != index)
-    //        {
-    //            Debug.Log(_userProfiles.transform.GetChild(index).gameObject.name);
-    //            Debug.Log(_userProfiles.transform.GetChild(index).GetChild(0).gameObject.name);
-    //            _userProfiles.transform.GetChild(index).GetChild(0).gameObject.SetActive(true);
-    //        }
-    //        else
-    //        {
-    //            Debug.Log(_userProfiles.transform.GetChild(index).gameObject.name);
-    //            Debug.Log(_userProfiles.transform.GetChild(index).GetChild(0).gameObject.name);
-    //            _userProfiles.transform.GetChild(index).GetChild(0).gameObject.SetActive(false);
-    //        }
-    //    }
-
-    //}
     public void SelectProfile(int index)
     {
-        
-        //selectionUI.SetActive(true);
+        _userProfiles.transform.GetChild(index).GetChild(0).gameObject.SetActive(true);
+        if (index == 0) _userProfiles.transform.GetChild(1).GetChild(0).gameObject.SetActive(false);
+        if (index == 1) _userProfiles.transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
+        _userProfileIndex = index;
+    }
+
+    public void ConfirmProfile()
+    {
+        DataManager.Instance.PhotoIndex = _userProfileIndex;
+        DataManager.Instance.UserName = _userInput.GetComponent<InputField>().text;
+        DataManager.Instance.NewId();
+        DataManager.Instance.SaveData();
+
+        SceneManager.LoadScene(1);
     }
 
 }

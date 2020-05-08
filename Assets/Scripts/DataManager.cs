@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DataManager : MonoBehaviour
 {
@@ -10,6 +12,8 @@ public class DataManager : MonoBehaviour
 
     public int Followers = 0;
     public string UserName = "";
+    public int PhotoIndex = 0;
+    private Guid id;
 
     void Awake()
     {
@@ -45,29 +49,49 @@ public class DataManager : MonoBehaviour
             SaveObject loadedObject = JsonUtility.FromJson<SaveObject>(_dataToString);
             Followers = loadedObject.followers;
             UserName = loadedObject.userName;
+            id = loadedObject.id;
+            PhotoIndex = loadedObject.photoIndex;
+
+            SceneManager.LoadScene(1);
+            Debug.Log("Loaded:" + _dataToString);
         }
         else
         {
             Debug.Log("no file");
+
+            if (SceneManager.GetActiveScene().buildIndex != 0)
+            {
+                SceneManager.LoadScene(0);
+                Debug.Log("Need a Profile, Loading Profile Scene");
+            }
         }
         
     }
 
-    private void SaveData()
+    public void SaveData()
     {
         SaveObject saveObject = new SaveObject
         {
             followers = Followers,
             userName = UserName,
+            id = id,
+            photoIndex = PhotoIndex,
         };
         string _jsonData = JsonUtility.ToJson(saveObject);
         System.IO.File.WriteAllText(Application.persistentDataPath + USER_DATA_PATH, _jsonData);
+    }
+
+    public void NewId()
+    {
+        id = Guid.NewGuid();
     }
 
     private class SaveObject
     {
         public int followers;
         public string userName;
+        public Guid id;
+        public int photoIndex;
     }
 
 }

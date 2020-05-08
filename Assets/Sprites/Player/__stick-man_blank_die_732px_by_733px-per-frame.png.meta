@@ -1,0 +1,439 @@
+fileFormatVersion: 2
+guid: 6b7f38ab418a7c04789053f37573027b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7987907816985003968
+    second: __stick-man_blank_die_732px_by_733px-per-frame_0
+  - first:
+      213: 69128116651281924
+    second: __stick-man_blank_die_732px_by_733px-per-frame_1
+  - first:
+      213: 2205319032765697554
+    second: __stick-man_blank_die_732px_by_733px-per-frame_2
+  - first:
+      213: 2858409825303423501
+    second: __stick-man_blank_die_732px_by_733px-per-frame_3
+  - first:
+      213: 6114553041286705646
+    second: __stick-man_blank_die_732px_by_733px-per-frame_4
+  - first:
+      213: -734510351856483157
+    second: __stick-man_blank_die_732px_by_733px-per-frame_5
+  - first:
+      213: -4882751868241006574
+    second: __stick-man_blank_die_732px_by_733px-per-frame_6
+  - first:
+      213: -7104050725901941016
+    second: __stick-man_blank_die_732px_by_733px-per-frame_7
+  - first:
+      213: -5347531346771616691
+    second: __stick-man_blank_die_732px_by_733px-per-frame_8
+  - first:
+      213: 8282057310807573031
+    second: __stick-man_blank_die_732px_by_733px-per-frame_9
+  - first:
+      213: 7107335623249654105
+    second: __stick-man_blank_die_732px_by_733px-per-frame_10
+  - first:
+      213: -4153163800166195777
+    second: __stick-man_blank_die_732px_by_733px-per-frame_11
+  - first:
+      213: -8968870257419475149
+    second: __stick-man_blank_die_732px_by_733px-per-frame_12
+  - first:
+      213: -7660122495396349378
+    second: __stick-man_blank_die_732px_by_733px-per-frame_13
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: __stick-man_blank_die_732px_by_733px-per-frame_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1476
+        width: 723
+        height: 723
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 943eaab7b9367e84694e55d87e014c64
+      internalID: -7987907816985003968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: __stick-man_blank_die_732px_by_733px-per-frame_1
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 1476
+        width: 723
+        height: 723
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d17cae562b506aa49a2d79302048d953
+      internalID: 69128116651281924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: __stick-man_blank_die_732px_by_733px-per-frame_2
+      rect:
+        serializedVersion: 2
+        x: 1446
+        y: 1476
+        width: 723
+        height: 723
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b6881dbf22b4524ba43a3b7d4c1a3d9
+      internalID: 2205319032765697554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: __stick-man_blank_die_732px_by_733px-per-frame_3
+      rect:
+        serializedVersion: 2
+        x: 2169
+        y: 1476
+        width: 723
+        height: 723
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 548bf5a4a838fc847b7852ff346b8f18
+      internalID: 2858409825303423501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: __stick-man_blank_die_732px_by_733px-per-frame_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 753
+        width: 723
+        height: 723
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ef38594cdfc7ac4fb07238aa1fe816a
+      internalID: 6114553041286705646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: __stick-man_blank_die_732px_by_733px-per-frame_5
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 753
+        width: 723
+        height: 723
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2584ad164b5294b43a148ce2e12f2a72
+      internalID: -734510351856483157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: __stick-man_blank_die_732px_by_733px-per-frame_6
+      rect:
+        serializedVersion: 2
+        x: 1446
+        y: 753
+        width: 723
+        height: 723
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75e0701d732865f49a210130ffb5e9b9
+      internalID: -4882751868241006574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: __stick-man_blank_die_732px_by_733px-per-frame_7
+      rect:
+        serializedVersion: 2
+        x: 2169
+        y: 753
+        width: 723
+        height: 723
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49c1913c1454fcb42a775e25ac2b957c
+      internalID: -7104050725901941016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: __stick-man_blank_die_732px_by_733px-per-frame_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 30
+        width: 723
+        height: 723
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adbfa5e6461e35a479c6006b5a0a4579
+      internalID: -5347531346771616691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: __stick-man_blank_die_732px_by_733px-per-frame_9
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 30
+        width: 723
+        height: 723
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4e6c07d1bcf80d4aaba84a280e2d503
+      internalID: 8282057310807573031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: __stick-man_blank_die_732px_by_733px-per-frame_10
+      rect:
+        serializedVersion: 2
+        x: 1446
+        y: 30
+        width: 723
+        height: 723
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e28377917d9a99a49985c9da6247fe8a
+      internalID: 7107335623249654105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: __stick-man_blank_die_732px_by_733px-per-frame_11
+      rect:
+        serializedVersion: 2
+        x: 2169
+        y: 30
+        width: 723
+        height: 723
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b84d6a515d6d3c4c9955c59d0061ae0
+      internalID: -4153163800166195777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: a5a525d0b334e2b43b115cbb1c7fda2c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

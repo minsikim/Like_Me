@@ -6,14 +6,31 @@ ScriptsOnlyBuild:
     - UnityStandardAssets.CrossPlatformInput.MobileControlRig
     Assembly-CSharp.dll:
     - CameraResolution
+    - CollectParticle
     - Collectable
+    - CollectedText
     - DataManager
+    - FirstPlaySceneManager
     - GameLikeController
     - GameSceneManager
     - GameSparksSettings
     - Player
     - ProfileController
+    - ProfileData
     - SpawnManager
+    Unity.TextMeshPro.dll:
+    - TMPro.TMP_FontAsset
+    - TMPro.TMP_Settings
+    - TMPro.TMP_SpriteAsset
+    - TMPro.TMP_StyleSheet
+    UnityEditor.Graphs.dll:
+    - UnityEditor.Graphs.AnimationBlendTree.Graph
+    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
+    - UnityEditor.Graphs.AnimationStateMachine.Graph
+    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
+    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
@@ -24,10 +41,80 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.InputField
     - UnityEngine.UI.ScrollRect
     - UnityEngine.UI.Shadow
     - UnityEngine.UI.Text
   sceneClasses:
+    Assets/Scenes/FirstPlay.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 49
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 109
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 9364}
+    - Class: 114
+      Script: {instanceID: 9534}
+    - Class: 114
+      Script: {instanceID: 9536}
+    - Class: 114
+      Script: {instanceID: 9542}
+    - Class: 114
+      Script: {instanceID: 9548}
+    - Class: 114
+      Script: {instanceID: 9556}
+    - Class: 114
+      Script: {instanceID: 9558}
+    - Class: 114
+      Script: {instanceID: 9592}
+    - Class: 114
+      Script: {instanceID: 9594}
+    - Class: 114
+      Script: {instanceID: 10046}
+    - Class: 114
+      Script: {instanceID: 10102}
+    - Class: 114
+      Script: {instanceID: 10548}
+    - Class: 114
+      Script: {instanceID: 10560}
+    - Class: 114
+      Script: {instanceID: 10940}
+    - Class: 114
+      Script: {instanceID: 11048}
+    - Class: 114
+      Script: {instanceID: 11220}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
     Assets/Scenes/Game.unity:
     - Class: 1
       Script: {instanceID: 0}
@@ -47,13 +134,17 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 61
       Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
-    - Class: 104
+    - Class: 91
       Script: {instanceID: 0}
-    - Class: 108
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
       Script: {instanceID: 0}
     - Class: 114
       Script: {instanceID: 9364}
@@ -86,25 +177,27 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10070}
     - Class: 114
-      Script: {instanceID: 10204}
-    - Class: 114
-      Script: {instanceID: 10270}
+      Script: {instanceID: 10206}
     - Class: 114
       Script: {instanceID: 10322}
     - Class: 114
-      Script: {instanceID: 10436}
+      Script: {instanceID: 10336}
     - Class: 114
-      Script: {instanceID: 10542}
+      Script: {instanceID: 10438}
     - Class: 114
-      Script: {instanceID: 10858}
+      Script: {instanceID: 10544}
     - Class: 114
-      Script: {instanceID: 10934}
+      Script: {instanceID: 10862}
     - Class: 114
-      Script: {instanceID: 11214}
+      Script: {instanceID: 10904}
     - Class: 114
-      Script: {instanceID: 11226}
+      Script: {instanceID: 10940}
     - Class: 114
-      Script: {instanceID: 34376}
+      Script: {instanceID: 11232}
+    - Class: 114
+      Script: {instanceID: 28828}
+    - Class: 114
+      Script: {instanceID: 43380}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -142,8 +235,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
-    - Class: 108
-      Script: {instanceID: 0}
     - Class: 114
       Script: {instanceID: 9364}
     - Class: 114
@@ -175,15 +266,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10070}
     - Class: 114
-      Script: {instanceID: 10204}
+      Script: {instanceID: 10206}
     - Class: 114
       Script: {instanceID: 10322}
     - Class: 114
-      Script: {instanceID: 10542}
+      Script: {instanceID: 10544}
     - Class: 114
-      Script: {instanceID: 10934}
+      Script: {instanceID: 10940}
     - Class: 114
-      Script: {instanceID: 11176}
+      Script: {instanceID: 11182}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -205,7 +296,7 @@ ScriptsOnlyBuild:
   scriptHashData:
   - hash:
       serializedVersion: 2
-      Hash: c47894ca78b5b3fbcf3c2463474673e8
+      Hash: 4b0bae7ca8215d448b863c3df23df830
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: DataManager
@@ -871,6 +962,12 @@ ScriptsOnlyBuild:
     className: Joystick
   - hash:
       serializedVersion: 2
+      Hash: 30412fffb371e1d445ec0efcda33b9b2
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FirstPlaySceneManager
+  - hash:
+      serializedVersion: 2
       Hash: 4f631fd718256a8c69483c396671a274
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: UnityStandardAssets.Utility
@@ -1009,6 +1106,12 @@ ScriptsOnlyBuild:
     className: ObjectResetter
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameLikeController
+  - hash:
+      serializedVersion: 2
       Hash: 9df954eca51e9f2b95915ae2918e4258
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: UnityStandardAssets.Effects
@@ -1111,7 +1214,7 @@ ScriptsOnlyBuild:
     className: Water
   - hash:
       serializedVersion: 2
-      Hash: 882588e736f37b786deaf26d1ae711b6
+      Hash: 44d76609ec188d71042906b0bc59c639
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameSceneManager
@@ -1151,6 +1254,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: UnityStandardAssets.Cameras
     className: HandHeldCam
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerFeedSceneManager
   - hash:
       serializedVersion: 2
       Hash: b294ba655397a2a6c58cddd17cea876c
@@ -1285,7 +1394,7 @@ ScriptsOnlyBuild:
     className: AudioTrack
   - hash:
       serializedVersion: 2
-      Hash: 3968f0905f5cd04bdc35121cf0e95d2f
+      Hash: 9b2f0d744491a47fdf214f7cdb84391a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player
@@ -1313,6 +1422,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: UnityStandardAssets._2D
     className: Camera2DFollow
+  - hash:
+      serializedVersion: 2
+      Hash: 501535dd7c103dba989680a5b8801d84
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CollectParticle
   - hash:
       serializedVersion: 2
       Hash: 219ec6059796d8951d2adcd8505d0dc2
@@ -1417,7 +1532,7 @@ ScriptsOnlyBuild:
     className: SignalEmitter
   - hash:
       serializedVersion: 2
-      Hash: 36cea3d6e316178eef7e5930baf7be07
+      Hash: 1dcaa522fd061ddfe21dcc2344f4d2d0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Collectable
@@ -1441,19 +1556,20 @@ ScriptsOnlyBuild:
     className: AutoMobileShaderSwitch
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 54fddee53b85e9e6ca363c6d48cec1a8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: PlayerFeedSceneManager
+    className: CollectedText
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 4aacf5c4f76ceb6090d141542f06b1c8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: GameLikeController
+    className: ProfileData
   platform: 13
   scenePathNames:
+  - Assets/Scenes/FirstPlay.unity
   - Assets/Scenes/Game.unity
   - Assets/Scenes/PlayerFeed.unity
   playerPath: "C:/Users/user/Google \uB4DC\uB77C\uC774\uBE0C/02. Project/14. Fourteenth
-    Senatus/06. Builds/20200507_v0.13_Alpha/LikeMe_v0.13.apk"
+    Senatus/06. Builds/20200508_v0.14_Alpha/LikeMe_v0.14.apk"

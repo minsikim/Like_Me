@@ -21,10 +21,14 @@ public class GameSceneManager : MonoBehaviour
 
     private bool _playing = false;
 
+    public ProfileData profileData;
+
     [SerializeField]
     private GameObject _player;
     [SerializeField]
     private GameObject _collectableContainer;
+    [SerializeField]
+    public GameObject InGameCanvas;
     [SerializeField]
     private GameObject _spawnManager;
     [SerializeField]
@@ -38,6 +42,11 @@ public class GameSceneManager : MonoBehaviour
 
     [SerializeField]
     private GameObject _background;
+
+    [SerializeField]
+    private Text _userNameText;
+    [SerializeField]
+    private GameObject _userProfileImage;
 
     [SerializeField]
     private Text _follwerText;
@@ -66,8 +75,13 @@ public class GameSceneManager : MonoBehaviour
         Bounds.xMax = 3.6f;
         Bounds.yMin = -1.8f;
         Bounds.yMax = 6.3f;
+
         currentLevel = Level.Like100;
-        GameoverDisable();
+
+        _userNameText.text = DataManager.Instance.UserName;
+        int profileIndex = DataManager.Instance.PhotoIndex;
+        _userProfileImage.GetComponent<Image>().sprite = profileData.ProfileImages[profileIndex].GetComponent<Image>().sprite;
+        GameoverUIDisable();
     }
 
     void Update()
@@ -89,7 +103,7 @@ public class GameSceneManager : MonoBehaviour
         };
         _controls.SetActive(true);
         _playButton.SetActive(false);
-        GameoverDisable();
+        GameoverUIDisable();
         //Disable Tutorial Canvas
         _tutorialCanvas.SetActive(false);
         Likes = 0;
@@ -132,7 +146,7 @@ public class GameSceneManager : MonoBehaviour
     {
         _gameoverCanvas.SetActive(true);
     }
-    public void GameoverDisable()
+    public void GameoverUIDisable()
     {
         _gameoverLikeText.text = "0 Likes";
         _gameoverCanvas.SetActive(false);

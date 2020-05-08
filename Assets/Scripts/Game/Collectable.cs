@@ -9,9 +9,13 @@ public class Collectable : MonoBehaviour
     public float gravity = 1f;
     public float spawnPerSecStart = 1f;
     public float spawnPerSecMax = 2f;
+    public GameObject particleEffect;
+    public GameObject collectedText;
 
     private float _mapHeight = 8f;
 
+
+    
     public enum CollectableType // your custom enumeration
     {
         Like,
@@ -37,7 +41,7 @@ public class Collectable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        CheckBoundsAndDestroy();
     }
 
     private void Drop()
@@ -53,13 +57,17 @@ public class Collectable : MonoBehaviour
     }
     public void Collided(Player _player)
     {
+        int cText = 0;
+
         switch (collectableType)
         {
             case CollectableType.Like:
                 GameSceneManager.AddLikes(1);
+                cText = 1;
                 break;
             case CollectableType.Like10:
                 GameSceneManager.AddLikes(10);
+                cText = 10;
                 break;
             case CollectableType.Devil:
 
@@ -75,6 +83,23 @@ public class Collectable : MonoBehaviour
                 break;
             default:
                 break;
+        }
+        if(particleEffect != null)
+        {
+            Instantiate(particleEffect, transform.position, transform.rotation);
+        }
+        if(collectedText != null)
+        {
+            Vector3 _position = Camera.main.WorldToScreenPoint(transform.position);
+            GameObject c = Instantiate(collectedText, _position + Vector3.up, Quaternion.identity);
+            c.GetComponent<CollectedText>().SetText(cText);
+
+            if (GameObject.Find("InGame_Canvas"))
+            {
+                GameObject p = GameObject.Find("InGame_Canvas");
+                c.transform.parent = p.transform;
+            }
+      
         }
         Destroy(gameObject);
     }

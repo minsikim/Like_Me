@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5890725108235090002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.4, y: 3.04, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_Children: []
   m_Father: {fileID: 0}
@@ -114,6 +114,7 @@ MonoBehaviour:
   gravity: 0.6
   spawnPerSecStart: 0.3
   spawnPerSecMax: 4.2
+  particleEffect: {fileID: 0}
   collectableType: 5
 --- !u!50 &6023071852954719216
 Rigidbody2D:

@@ -12,6 +12,10 @@ public class Player : MonoBehaviour
 
     public bool _isDisoriented = false;
 
+    public GameObject _image;
+
+    private int _moving;
+
     void Awake()
     {
         gameObject.SetActive(false);
@@ -19,12 +23,40 @@ public class Player : MonoBehaviour
     void Start()
     {
         transform.position = new Vector3(0, Bounds.yMin, 0);
+        _moving = Animator.StringToHash("Moving");
     }
 
-    // Update is called once per frame
     void Update()
     {
         CalculateMovement();
+        //!TODO: Change to a non-updating function
+        ControlAnimation();
+    }
+
+    private void ControlAnimation()
+    {
+        if (_direction == 0f)
+        {
+            if (_image.GetComponent<Animator>().GetBool(_moving) == false) return;
+            else _image.GetComponent<Animator>().SetBool(_moving, false);
+        }
+        else
+        {
+            if (_image.GetComponent<Animator>().GetBool(_moving) == true) return;
+            else _image.GetComponent<Animator>().SetBool(_moving, true);
+            //Flip if _direction < 0
+            if(_direction < 0)
+            {
+                _image.transform.localPosition = new Vector3(1.5f, 0, 0);
+                _image.GetComponent<SpriteRenderer>().flipX = true;
+            }
+            else if(_direction > 0)
+            {
+                _image.transform.localPosition = new Vector3(0, 0, 0);
+                _image.GetComponent<SpriteRenderer>().flipX = false;
+            }
+            
+        }
     }
 
     private void CalculateMovement()

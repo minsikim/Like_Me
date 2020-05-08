@@ -74,6 +74,5 @@ public class SpawnManager : MonoBehaviour
         {
             Debug.LogError(" _collectablePrefabs is NULL");
         }
-        Debug.Log("Start Spawning: " + _stopSpawning);
     }
 }

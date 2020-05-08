@@ -114,6 +114,10 @@ MonoBehaviour:
   gravity: 0.6
   spawnPerSecStart: 0.15
   spawnPerSecMax: 0.6
+  particleEffect: {fileID: 9109570832995849331, guid: 2cf0955b08e54eb42ad8a3ab901ac4a6,
+    type: 3}
+  collectedText: {fileID: 3378228650131893897, guid: 1d5b67e255eeddf46a67419ff96b4142,
+    type: 3}
   collectableType: 1
 --- !u!50 &-4811275784948177271
 Rigidbody2D:
