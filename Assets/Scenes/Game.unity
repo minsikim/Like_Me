@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -378,6 +378,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 197294536}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &197294538 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5685540201876994441, guid: df9afb8f783b29a42ba85736a3e01dbe,
+    type: 3}
+  m_PrefabInstance: {fileID: 197294536}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 197294537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0864a27c35c533c47aa51a8e4bc3ed8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &256757913
 GameObject:
   m_ObjectHideFlags: 0
@@ -686,7 +698,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 197294538}
           m_MethodName: setDirection
           m_Mode: 4
           m_Arguments:
@@ -703,7 +715,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 197294538}
           m_MethodName: setDirection
           m_Mode: 4
           m_Arguments:
@@ -1943,7 +1955,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 197294538}
           m_MethodName: setDirection
           m_Mode: 4
           m_Arguments:
@@ -1960,7 +1972,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 197294538}
           m_MethodName: setDirection
           m_Mode: 4
           m_Arguments:
