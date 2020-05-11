@@ -98,6 +98,8 @@ MonoBehaviour:
   _isDead: 0
   _isDisoriented: 0
   _image: {fileID: 7225943203653699939}
+  _collectedText: {fileID: 3378228650131893897, guid: 1d5b67e255eeddf46a67419ff96b4142,
+    type: 3}
 --- !u!1 &7225943203653699939
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
 
     public GameObject _image;
 
+    public GameObject _collectedText;
+
     private int _moving;
 
     void Awake()
@@ -148,6 +150,23 @@ public class Player : MonoBehaviour
     {
         //오른쪽 + 왼쪽 - 제자리 0
         _direction = directionX;
+    }
+
+    public void SpawnOverHeadText(int amount)
+    {
+        if (_collectedText != null)
+        {
+            Vector3 _position = Camera.main.WorldToScreenPoint(transform.position + Vector3.up);
+            GameObject c = Instantiate(_collectedText, _position + Vector3.up, Quaternion.identity);
+            c.GetComponent<CollectedText>().SetText(amount);
+
+            if (GameObject.Find("InGame_Canvas") != null)
+            {
+                GameObject p = GameObject.Find("InGame_Canvas");
+                c.transform.parent = p.transform;
+            }
+
+        }
     }
 
     IEnumerator DisorientRoutine()

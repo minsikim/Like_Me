@@ -17,14 +17,15 @@ public class Bounds
 
 public class GameSceneManager : MonoBehaviour
 {
+    public static GameSceneManager current;
+
     public static int Likes;
 
     private bool _playing = false;
 
     public ProfileData profileData;
 
-    [SerializeField]
-    private GameObject _player;
+    public GameObject player;
     [SerializeField]
     private GameObject _collectableContainer;
     [SerializeField]
@@ -48,6 +49,8 @@ public class GameSceneManager : MonoBehaviour
     [SerializeField]
     private GameObject _userProfileImage;
 
+    public GameObject CollectedText;
+
     [SerializeField]
     private Text _follwerText;
     [SerializeField]
@@ -57,18 +60,12 @@ public class GameSceneManager : MonoBehaviour
 
     private DateTime _startTime;
 
-    public enum Level // your custom enumeration
-    {
-        Like100,
-        Like300,
-        Like500,
-        Like1000,
-        Like5000,
-        Like10000
-    };
-
     public Level currentLevel;
 
+    private void Awake()
+    {
+        current = this;
+    }
     void Start()
     {
         Bounds.xMin = -3.8f;
@@ -76,11 +73,12 @@ public class GameSceneManager : MonoBehaviour
         Bounds.yMin = -1.8f;
         Bounds.yMax = 6.3f;
 
-        currentLevel = Level.Like100;
+        currentLevel        = DataManager.Instance.CurrentLevel;
+        _userNameText.text  = DataManager.Instance.UserName;
+        int profileIndex    = DataManager.Instance.PhotoIndex;
 
-        _userNameText.text = DataManager.Instance.UserName;
-        int profileIndex = DataManager.Instance.PhotoIndex;
         _userProfileImage.GetComponent<Image>().sprite = profileData.ProfileImages[profileIndex].GetComponent<Image>().sprite;
+
         GameoverUIDisable();
     }
 
@@ -97,7 +95,7 @@ public class GameSceneManager : MonoBehaviour
     {
         _background.GetComponent<Animator>().SetBool("Playing", true);
 
-        if (!_player.GetComponent<Player>()._isDead)
+        if (!player.GetComponent<Player>()._isDead)
         {
             Debug.LogError("Can not start player is still alive");
         };
@@ -110,9 +108,9 @@ public class GameSceneManager : MonoBehaviour
         _startTime = DateTime.Now;
         _gameDurationText.text = "0 sec";
         //Enable SpawnManager
-        _player.SetActive(true);
-        _player.GetComponent<Player>()._isDead = false;
-        _player.GetComponent<Player>()._isDisoriented = false;
+        player.SetActive(true);
+        player.GetComponent<Player>()._isDead = false;
+        player.GetComponent<Player>()._isDisoriented = false;
         //Enable Player
         _spawnManager.SetActive(true);
         _spawnManager.GetComponent<SpawnManager>().CallSpawn();
@@ -136,7 +134,7 @@ public class GameSceneManager : MonoBehaviour
         }
         _tutorialCanvas.SetActive(false);
         _gameoverCanvas.SetActive(true);
-        _player.SetActive(false);
+        player.SetActive(false);
         _spawnManager.SetActive(false);
         GameoverUIEnable();
         _playing = false;
@@ -152,9 +150,13 @@ public class GameSceneManager : MonoBehaviour
         _gameoverCanvas.SetActive(false);
     }
 
-    public static void AddLikes(int amount)
+    public void AddLikes(int amount)
     {
+        //Update Game Data: Likes
         Likes += amount;
+        //Spawn a collected text above player
+        player.GetComponent<Player>().SpawnOverHeadText(amount);
+   
     }
     public void ToFeedScene()
     {

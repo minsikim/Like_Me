@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -966,6 +966,7 @@ MonoBehaviour:
   Followers: 0
   UserName: 
   PhotoIndex: 0
+  CurrentLevel: 0
 --- !u!4 &480139716
 Transform:
   m_ObjectHideFlags: 0
@@ -2605,7 +2606,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profileData: {fileID: 11400000, guid: b3c3df69f6c46c042b3a9c698ff6c3a6, type: 2}
-  _player: {fileID: 197294537}
+  player: {fileID: 197294537}
   _collectableContainer: {fileID: 158261697}
   InGameCanvas: {fileID: 1751685320}
   _spawnManager: {fileID: 2078848472}
@@ -2616,6 +2617,7 @@ MonoBehaviour:
   _background: {fileID: 1880086106}
   _userNameText: {fileID: 325215172}
   _userProfileImage: {fileID: 1914940300}
+  CollectedText: {fileID: 0}
   _follwerText: {fileID: 2118778328}
   _gameoverLikeText: {fileID: 819169385}
   _gameDurationText: {fileID: 759963272}

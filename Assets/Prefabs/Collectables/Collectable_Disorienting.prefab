@@ -114,7 +114,8 @@ MonoBehaviour:
   gravity: 0.6
   spawnPerSecStart: 0.2
   spawnPerSecMax: 0.4
-  collectableType: 4
+  particleEffect: {fileID: 0}
+  collectableType: 17
 --- !u!50 &6494534659572969665
 Rigidbody2D:
   serializedVersion: 4

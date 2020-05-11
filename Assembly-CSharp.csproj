@@ -262,7 +262,9 @@
     <Compile Include="Assets\Scripts\CameraResolution.cs" />
     <Compile Include="Assets\Scripts\CollectedText.cs" />
     <Compile Include="Assets\Scripts\Data\ProfileData.cs" />
+    <Compile Include="Assets\Scripts\Data\StageData.cs" />
     <Compile Include="Assets\Scripts\DataManager.cs" />
+    <Compile Include="Assets\Scripts\Enumerable\InGameEnums.cs" />
     <Compile Include="Assets\Scripts\Game\Collectable.cs" />
     <Compile Include="Assets\Scripts\Game\CollectParticle.cs" />
     <Compile Include="Assets\Scripts\Game\Player.cs" />

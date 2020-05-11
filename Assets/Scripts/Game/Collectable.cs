@@ -10,21 +10,8 @@ public class Collectable : MonoBehaviour
     public float spawnPerSecStart = 1f;
     public float spawnPerSecMax = 2f;
     public GameObject particleEffect;
-    public GameObject collectedText;
 
     private float _mapHeight = 8f;
-
-
-    
-    public enum CollectableType // your custom enumeration
-    {
-        Like,
-        Like10,
-        Devil,
-        Delete,
-        Disorienting,
-        Death
-    };
 
     public CollectableType collectableType;
 
@@ -57,23 +44,58 @@ public class Collectable : MonoBehaviour
     }
     public void Collided(Player _player)
     {
-        int cText = 0;
-
         switch (collectableType)
         {
-            case CollectableType.Like:
-                GameSceneManager.AddLikes(1);
-                cText = 1;
+            case CollectableType.Like1:
+                GameSceneManager.current.AddLikes(1);
+                break;
+            case CollectableType.Like2:
+                GameSceneManager.current.AddLikes(2);
                 break;
             case CollectableType.Like10:
-                GameSceneManager.AddLikes(10);
-                cText = 10;
+                GameSceneManager.current.AddLikes(10 + UnityEngine.Random.Range(-2, 2 + 1));
                 break;
-            case CollectableType.Devil:
-
+            case CollectableType.Like20:
+                GameSceneManager.current.AddLikes(20 + UnityEngine.Random.Range(-4, 4 + 1));
                 break;
-            case CollectableType.Delete:
-
+            case CollectableType.Like50:
+                GameSceneManager.current.AddLikes(50 + UnityEngine.Random.Range(-10, 10 + 1));
+                break;
+            case CollectableType.Like100:
+                GameSceneManager.current.AddLikes(100 + UnityEngine.Random.Range(-20, 20 + 1));
+                break;
+            case CollectableType.Like250:
+                GameSceneManager.current.AddLikes(250 + UnityEngine.Random.Range(-50, 50 + 1));
+                break;
+            case CollectableType.Like500:
+                GameSceneManager.current.AddLikes(500 + UnityEngine.Random.Range(-100, 100 + 1));
+                break;
+            case CollectableType.Like1000:
+                GameSceneManager.current.AddLikes(1000 + UnityEngine.Random.Range(-200, 200 + 1));
+                break;
+            case CollectableType.Like2500:
+                GameSceneManager.current.AddLikes(2500 + UnityEngine.Random.Range(-500, 500 + 1));
+                break;
+            case CollectableType.Like5000:
+                GameSceneManager.current.AddLikes(5000 + UnityEngine.Random.Range(-1000, 1000 + 1));
+                break;
+            case CollectableType.Like10000:
+                GameSceneManager.current.AddLikes(10000 + UnityEngine.Random.Range(-2000, 2000 + 1));
+                break;
+            case CollectableType.Like25000:
+                GameSceneManager.current.AddLikes(25000 + UnityEngine.Random.Range(-5000, 5000 + 1));
+                break;
+            case CollectableType.Like50000:
+                GameSceneManager.current.AddLikes(50000 + UnityEngine.Random.Range(-10000, 10000 + 1));
+                break;
+            case CollectableType.Like100000:
+                GameSceneManager.current.AddLikes(100000 + UnityEngine.Random.Range(-20000, 20000 + 1));
+                break;
+            case CollectableType.Like250000:
+                GameSceneManager.current.AddLikes(250000 + UnityEngine.Random.Range(-50000, 50000 + 1));
+                break;
+            case CollectableType.Like1000000:
+                GameSceneManager.current.AddLikes(1000000 + UnityEngine.Random.Range(-200000, 200000 + 1));
                 break;
             case CollectableType.Disorienting:
                 _player.Disorient();
@@ -88,19 +110,7 @@ public class Collectable : MonoBehaviour
         {
             Instantiate(particleEffect, transform.position, transform.rotation);
         }
-        if(collectedText != null)
-        {
-            Vector3 _position = Camera.main.WorldToScreenPoint(transform.position);
-            GameObject c = Instantiate(collectedText, _position + Vector3.up, Quaternion.identity);
-            c.GetComponent<CollectedText>().SetText(cText);
 
-            if (GameObject.Find("InGame_Canvas"))
-            {
-                GameObject p = GameObject.Find("InGame_Canvas");
-                c.transform.parent = p.transform;
-            }
-      
-        }
         Destroy(gameObject);
     }
 
