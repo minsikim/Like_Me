@@ -1,17 +1,30 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(fileName = "ProfileData", menuName = "Project L/StageData")]
+[CreateAssetMenu(fileName = "StageData", menuName = "Project L/StageData")]
 public class StageData : ScriptableObject
 {
     public List<StageSetting> StageSettings;
+    public StageSetting GetStageData(Level level)
+    {
+        StageSetting stageSettings = new StageSetting();
+
+        foreach (StageSetting s in StageSettings)
+        {
+            if (s.StageLevel == level)
+                stageSettings = s;
+        }
+
+        return stageSettings;
+    }
 }
 
+[Serializable]
 public struct StageSetting
 {
     public Level StageLevel;
-    GameObject PrimaryCollectable;
-    GameObject SecondaryCollectable;
+    public CollectableType PrimaryCollectable;
+    public CollectableType SecondaryCollectable;
 }

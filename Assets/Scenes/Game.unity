@@ -2617,7 +2617,6 @@ MonoBehaviour:
   _background: {fileID: 1880086106}
   _userNameText: {fileID: 325215172}
   _userProfileImage: {fileID: 1914940300}
-  CollectedText: {fileID: 0}
   _follwerText: {fileID: 2118778328}
   _gameoverLikeText: {fileID: 819169385}
   _gameDurationText: {fileID: 759963272}
@@ -4488,13 +4487,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 197294537}
-  _maxGrowthSeconds: 60
+  _maxGrowthSeconds: 30
+  _stageData: {fileID: 11400000, guid: 19c8ab9b66372ea41b32e775ba26d57d, type: 2}
+  _collectables: {fileID: 11400000, guid: 178ee40fe18a9d64c8548ae749058e4b, type: 2}
   _collectableContainer: {fileID: 158261697}
-  _collectablePrefabs:
-  - {fileID: 3348148127913954894, guid: 8c1bab60460cb3c44ad129f6299d22ad, type: 3}
-  - {fileID: 7555473821093090056, guid: 4361c20967d3cad49a15c73b244cea4f, type: 3}
-  - {fileID: 6169939850279446410, guid: 3a561e28914eb1e4bb7e57b0ad281553, type: 3}
-  - {fileID: 5890725108235090002, guid: b9b07588f3474c14393c35d77cc69323, type: 3}
 --- !u!1 &2118778326
 GameObject:
   m_ObjectHideFlags: 0

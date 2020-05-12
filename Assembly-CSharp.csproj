@@ -261,6 +261,7 @@
     <Compile Include="Assets\GPGSIds.cs" />
     <Compile Include="Assets\Scripts\CameraResolution.cs" />
     <Compile Include="Assets\Scripts\CollectedText.cs" />
+    <Compile Include="Assets\Scripts\Data\CollectableData.cs" />
     <Compile Include="Assets\Scripts\Data\ProfileData.cs" />
     <Compile Include="Assets\Scripts\Data\StageData.cs" />
     <Compile Include="Assets\Scripts\DataManager.cs" />

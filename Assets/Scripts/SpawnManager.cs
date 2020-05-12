@@ -1,18 +1,35 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
+    //Current Player
     [SerializeField]
     private GameObject _player;
 
+    //Settings
     [SerializeField]
     private float _maxGrowthSeconds = 30f;
+
+    //Stage Information
+    [SerializeField]
+    private StageData _stageData;
+    [SerializeField]
+    private CollectableData _collectables;
+
+    //GameObjects in Scene
     [SerializeField]
     private GameObject _collectableContainer;
-    [SerializeField]
-    private GameObject[] _collectablePrefabs;
+
+    //Needed Things to Spawn
+    private StageSetting _stageSetting;
+    private List<GameObject> _spawnPrefabList = new List<GameObject>();
+
+    //DELETE! Temp to see whether it is assigned correctly
+    public GameObject _primaryCollectable;
+    public GameObject _secondaryCollectable;
 
     private DateTime _startSpawnTime;
 
@@ -23,7 +40,26 @@ public class SpawnManager : MonoBehaviour
     }
     void Start()
     {
+        //Get Stage Settings
+        _stageSetting = _stageData.GetStageData(DataManager.Instance.CurrentLevel);
 
+        //With the Stage Settings > Get Prefabs this Spawner has to spawn
+        _primaryCollectable = _collectables.GetPrefab(_stageSetting.PrimaryCollectable);
+        _secondaryCollectable = _collectables.GetPrefab(_stageSetting.SecondaryCollectable);
+
+        //Before Primary Collectable to SpawnList delete Particled Collectables from Primary Collecatable
+        _primaryCollectable.GetComponent<Collectable>().particleEffect = null;
+        //And Override spawnPerSec Datas
+        _primaryCollectable.GetComponent<Collectable>().spawnPerSecStart = 0.9f;
+        _primaryCollectable.GetComponent<Collectable>().spawnPerSecMax = 8f;
+        _secondaryCollectable.GetComponent<Collectable>().spawnPerSecStart = 0.15f;
+        _secondaryCollectable.GetComponent<Collectable>().spawnPerSecMax = 0.6f;
+
+        //Add collectables to Spawn List
+        _spawnPrefabList.Add(_primaryCollectable);
+        _spawnPrefabList.Add(_secondaryCollectable);
+        _spawnPrefabList.Add(_collectables.GetPrefab(CollectableType.Death));
+        _spawnPrefabList.Add(_collectables.GetPrefab(CollectableType.Disorienting));
     }
 
     void Update()
@@ -63,9 +99,9 @@ public class SpawnManager : MonoBehaviour
     {
         _startSpawnTime = DateTime.Now;
         _stopSpawning = false;
-        if (_collectablePrefabs != null)
+        if (_spawnPrefabList != null)
         {
-            foreach (GameObject p in _collectablePrefabs)
+            foreach (GameObject p in _spawnPrefabList)
             {
                 StartCoroutine(SpawnCollectableRoutine(p));
             }

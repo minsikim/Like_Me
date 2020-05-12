@@ -49,8 +49,6 @@ public class GameSceneManager : MonoBehaviour
     [SerializeField]
     private GameObject _userProfileImage;
 
-    public GameObject CollectedText;
-
     [SerializeField]
     private Text _follwerText;
     [SerializeField]

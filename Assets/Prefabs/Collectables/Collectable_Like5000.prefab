@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 890093426039106598}
   - component: {fileID: -4811275784948177271}
   m_Layer: 0
-  m_Name: Collectable_Like10
+  m_Name: Collectable_Like5000
   m_TagString: Collectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 266757279
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f671b42b9ed11e24b8aca97f9ba910ae, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7a0ca4ea2c11b594fbea7aba6355b589, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -114,9 +114,9 @@ MonoBehaviour:
   gravity: 0.6
   spawnPerSecStart: 0.15
   spawnPerSecMax: 0.6
-  particleEffect: {fileID: 9109570832995849331, guid: 2cf0955b08e54eb42ad8a3ab901ac4a6,
+  particleEffect: {fileID: 9109570832995849331, guid: 582704ddac90e2e48b561d19348d0508,
     type: 3}
-  collectableType: 2
+  collectableType: 10
 --- !u!50 &-4811275784948177271
 Rigidbody2D:
   serializedVersion: 4

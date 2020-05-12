@@ -21,7 +21,10 @@ public class CollectParticle : MonoBehaviour
                 Vector2 _direction = Vector2.right * Random.Range(-1f, 1f);
                 p.transform.localScale = p.transform.localScale * pUnit.Scale;
                 p.GetComponent<Rigidbody2D>().AddForce(_direction * pUnit.ExplosionPower);
+                //Disable Particle
+                p.GetComponent<Collectable>().particleEffect = null;
             }
+            
         }
         Destroy(gameObject, _duration);
     }
