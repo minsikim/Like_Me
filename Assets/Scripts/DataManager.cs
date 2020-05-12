@@ -93,11 +93,11 @@ public class DataManager : MonoBehaviour
         {
             string _dataToString = System.IO.File.ReadAllText(Application.persistentDataPath + USER_DATA_PATH);
             SaveObject loadedObject = JsonUtility.FromJson<SaveObject>(_dataToString);
-            Followers = loadedObject.followers;
-            UserName = loadedObject.userName;
-            id = loadedObject.id;
-            PhotoIndex = loadedObject.photoIndex;
-            CurrentLevel = loadedObject.currentLevel;
+            Followers =     loadedObject.followers;
+            UserName =      loadedObject.userName;
+            id =            loadedObject.id;
+            PhotoIndex =    loadedObject.photoIndex;
+            CurrentLevel =  loadedObject.currentLevel;
 
             if (SceneManager.GetActiveScene().buildIndex == 0)
             {
