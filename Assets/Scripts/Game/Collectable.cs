@@ -97,11 +97,23 @@ public class Collectable : MonoBehaviour
             case CollectableType.Like1000000:
                 GameSceneManager.current.AddLikes(1000000 + UnityEngine.Random.Range(-200000, 200000 + 1));
                 break;
+            case CollectableType.Double:
+                GameSceneManager.current._double = true;
+                GameSceneManager.current.AddTimer(TimerType.Double);
+                break;
+            case CollectableType.Triple:
+                GameSceneManager.current._triple = true;
+                GameSceneManager.current.AddTimer(TimerType.Triple);
+                break;
             case CollectableType.Disorienting:
                 _player.Disorient();
                 break;
             case CollectableType.Death:
+#if UNITY_EDITOR
+                Debug.Log("Died in Editor");
+#else
                 _player.OnPlayerDeath();
+#endif
                 break;
             default:
                 break;

@@ -1,10 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEditor;
-using System.IO;
-using System.Linq;
-using System.Runtime.Serialization.Json;
 
 [CustomEditor(typeof(DataManager))]
 public class DataManger_Editor : Editor

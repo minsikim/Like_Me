@@ -60,6 +60,8 @@ public class SpawnManager : MonoBehaviour
         _spawnPrefabList.Add(_secondaryCollectable);
         _spawnPrefabList.Add(_collectables.GetPrefab(CollectableType.Death));
         _spawnPrefabList.Add(_collectables.GetPrefab(CollectableType.Disorienting));
+        _spawnPrefabList.Add(_collectables.GetPrefab(CollectableType.Double));
+        _spawnPrefabList.Add(_collectables.GetPrefab(CollectableType.Triple));
     }
 
     void Update()

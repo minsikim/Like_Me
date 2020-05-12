@@ -22,6 +22,8 @@ public class GameSceneManager : MonoBehaviour
     public static int Likes;
 
     private bool _playing = false;
+    public bool _double = false;
+    public bool _triple = false;
 
     public ProfileData profileData;
 
@@ -40,6 +42,8 @@ public class GameSceneManager : MonoBehaviour
     private GameObject _controls;
     [SerializeField]
     private GameObject _playButton;
+    [SerializeField]
+    private GameObject _gameInfoContainer;
 
     [SerializeField]
     private GameObject _background;
@@ -108,7 +112,7 @@ public class GameSceneManager : MonoBehaviour
         //Enable SpawnManager
         player.SetActive(true);
         player.GetComponent<Player>()._isDead = false;
-        player.GetComponent<Player>()._isDisoriented = false;
+        Player._isDisoriented = false;
         //Enable Player
         _spawnManager.SetActive(true);
         _spawnManager.GetComponent<SpawnManager>().CallSpawn();
@@ -150,11 +154,27 @@ public class GameSceneManager : MonoBehaviour
 
     public void AddLikes(int amount)
     {
+        if(_double)
+        {
+            amount = amount * 2;
+        }else if (_triple)
+        {
+            amount = amount * 3;
+        }
         //Update Game Data: Likes
         Likes += amount;
         //Spawn a collected text above player
         player.GetComponent<Player>().SpawnOverHeadText(amount);
-   
+    }
+
+    public void AddTimer(TimerType type)
+    {
+        _gameInfoContainer.GetComponent<GameInfoAreaController>().AddTimer(type);
+        Debug.Log("GameSceneManger: Added Timer :" + type.ToString());
+    }
+    public void ResetTimer(TimerType type)
+    {
+        _gameInfoContainer.GetComponent<GameInfoAreaController>().ResetTimer(type);
     }
     public void ToFeedScene()
     {
@@ -163,5 +183,14 @@ public class GameSceneManager : MonoBehaviour
     public void ToGameScene()
     {
         SceneManager.LoadScene("Game");
+    }
+
+    public void UnsetDouble()
+    {
+        _double = false;
+    }
+    public void UnsetTriple()
+    {
+        _triple = false;
     }
 }

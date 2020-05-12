@@ -2343,6 +2343,7 @@ MonoBehaviour:
   Followers: 0
   UserName: 
   PhotoIndex: 0
+  CurrentLevel: 0
 --- !u!4 &1120721755
 Transform:
   m_ObjectHideFlags: 0
@@ -2914,7 +2915,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _userNameText: {fileID: 325215170}
   _profileImage: {fileID: 1914940300}
-  ProfileImages: {fileID: 0}
+  ProfileImages: {fileID: 11400000, guid: b3c3df69f6c46c042b3a9c698ff6c3a6, type: 2}
 --- !u!4 &1354997519
 Transform:
   m_ObjectHideFlags: 0

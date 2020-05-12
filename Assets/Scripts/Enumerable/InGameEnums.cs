@@ -1,4 +1,4 @@
-﻿public enum Level // your custom enumeration
+﻿public enum Level
 {
     Follower1,
     Follower10,
@@ -12,7 +12,7 @@
     Follower1B,
 };
 
-public enum CollectableType // your custom enumeration
+public enum CollectableType
 {
     Like1,
     Like2,
@@ -32,5 +32,14 @@ public enum CollectableType // your custom enumeration
     Like250000,
     Like1000000,
     Disorienting,
-    Death
+    Death,
+    Double,
+    Triple
+};
+
+public enum TimerType
+{
+    Disorienting,
+    Double,
+    Triple,
 };

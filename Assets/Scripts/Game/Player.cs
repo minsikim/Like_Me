@@ -4,13 +4,15 @@ using UnityStandardAssets.CrossPlatformInput;
 
 public class Player : MonoBehaviour
 {
+    public static Player current;
+
     public float _direction = 0f;
 
     public float _speed = 1f;
 
     public bool _isDead = true;
 
-    public bool _isDisoriented = false;
+    public static bool _isDisoriented = false;
 
     public GameObject _image;
 
@@ -20,6 +22,7 @@ public class Player : MonoBehaviour
 
     void Awake()
     {
+        current = this;
         gameObject.SetActive(false);
     }
     void Start()
@@ -118,8 +121,22 @@ public class Player : MonoBehaviour
 
     public void Disorient()
     {
-        StartCoroutine(DisorientRoutine());
-        Debug.Log("Player is Disoriented");
+        //StartCoroutine(DisorientRoutine());
+        if (_isDisoriented)
+        {
+            GameSceneManager.current.ResetTimer(TimerType.Disorienting);
+            Debug.Log("Disorient timer reset");
+        }
+        else
+        {
+            _isDisoriented = true;
+            GameSceneManager.current.AddTimer(TimerType.Disorienting);
+            Debug.Log("Player is Disoriented");
+        }
+    }
+    public void Undisorient()
+    {
+        _isDisoriented = false;
     }
     public void SpeedUp()
     {
@@ -163,7 +180,7 @@ public class Player : MonoBehaviour
             if (GameObject.Find("InGame_Canvas") != null)
             {
                 GameObject p = GameObject.Find("InGame_Canvas");
-                c.transform.parent = p.transform;
+                c.transform.SetParent(p.transform);
             }
 
         }
@@ -172,15 +189,14 @@ public class Player : MonoBehaviour
     IEnumerator DisorientRoutine()
     {
         _isDisoriented = true;
+        GameSceneManager.current.AddTimer(TimerType.Disorienting);
         yield return new WaitForSeconds(5f);
         _isDisoriented = false;
-        Debug.Log("Player is Normal");
     }
     IEnumerator SpeedUpRoutine()
     {
         _speed = _speed * 2f;
         yield return new WaitForSeconds(5f);
         _speed = _speed * 0.5f;
-        Debug.Log("Player is Normal");
     }
 }

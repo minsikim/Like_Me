@@ -632,6 +632,7 @@ MonoBehaviour:
   Followers: 0
   UserName: 
   PhotoIndex: 0
+  CurrentLevel: 0
 --- !u!4 &551615785
 Transform:
   m_ObjectHideFlags: 0
@@ -1142,7 +1143,7 @@ GameObject:
   - component: {fileID: 1758419284}
   - component: {fileID: 1758419283}
   m_Layer: 0
-  m_Name: Scene_Manager
+  m_Name: FirstPlay_SceneManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
