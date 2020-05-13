@@ -16,6 +16,10 @@ public class FirstPlaySceneManager : MonoBehaviour
 
     void Start()
     {
+        if (DataManager.Instance.Loaded)
+        {
+            SceneManager.LoadScene(2);
+        }
         AudioChannelController _bgmContoller = GameInstance.Instance._audioManager.MusicController;
         if (!_bgmContoller.IsPlaying(_bgmContoller.Audios[0]))
         {

@@ -32,14 +32,19 @@ public class GameInstance : MonoBehaviour
 
     public void StartGame()
     {
-        if (DataManager.Instance.Loaded)
-        {
-            SceneManager.LoadScene(2);
-        }
-        else
-        {
-            SceneManager.LoadScene(1);
-        }
+#if UNITY_EDITOR
+
+#else
+        SceneManager.LoadScene(1);
+#endif
+        //if (DataManager.Instance.Loaded)
+        //{
+        //    SceneManager.LoadScene(2);
+        //}
+        //else
+        //{
+        //    SceneManager.LoadScene(1);
+        //}
     }
 
     public void QuitApplication()
