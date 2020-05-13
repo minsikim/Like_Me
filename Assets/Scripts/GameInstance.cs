@@ -27,14 +27,19 @@ public class GameInstance : MonoBehaviour
     }
     private void Start()
     {
-        
+        Invoke("StartGame", 2.0f);
     }
 
-    IEnumerator LoadScene(int index)
+    public void StartGame()
     {
-        //!TODO: 기본 전환 에니메이션 추가
-        yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene(index);
+        if (DataManager.Instance.Loaded)
+        {
+            SceneManager.LoadScene(2);
+        }
+        else
+        {
+            SceneManager.LoadScene(1);
+        }
     }
 
     public void QuitApplication()

@@ -44,7 +44,7 @@ public class FirstPlaySceneManager : MonoBehaviour
         DataManager.Instance.NewId();
         DataManager.Instance.SaveData();
 
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 
 }
