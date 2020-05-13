@@ -279,6 +279,7 @@
     <Compile Include="Assets\Scripts\CameraResolution.cs" />
     <Compile Include="Assets\Scripts\CollectedText.cs" />
     <Compile Include="Assets\Scripts\Data\CollectableData.cs" />
+    <Compile Include="Assets\Scripts\Data\ImageListData.cs" />
     <Compile Include="Assets\Scripts\Data\ProfileData.cs" />
     <Compile Include="Assets\Scripts\Data\StageData.cs" />
     <Compile Include="Assets\Scripts\Data\TimerData.cs" />
