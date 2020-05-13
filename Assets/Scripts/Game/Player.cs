@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
 
     public bool _isDead = true;
 
-    public static bool _isDisoriented = false;
+    public bool _isDisoriented = false;
 
     public GameObject _image;
 
@@ -137,6 +137,7 @@ public class Player : MonoBehaviour
     public void Undisorient()
     {
         _isDisoriented = false;
+        Debug.LogError("Undisorient");
     }
     public void SpeedUp()
     {

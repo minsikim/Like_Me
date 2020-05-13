@@ -16,7 +16,11 @@ public class FirstPlaySceneManager : MonoBehaviour
 
     void Start()
     {
-
+        AudioChannelController _bgmContoller = GameInstance.Instance._audioManager.MusicController;
+        if (!_bgmContoller.IsPlaying(_bgmContoller.Audios[0]))
+        {
+            _bgmContoller.Play(_bgmContoller.Audios[0]);
+        }
     }
 
     // Update is called once per frame

@@ -17,6 +17,12 @@ public class PlayerFeedSceneManager : MonoBehaviour
     {
         _userNameText.GetComponent<Text>().text = DataManager.Instance.UserName;
         _profileImage.GetComponent<Image>().sprite = ProfileImages.ProfileImages[DataManager.Instance.PhotoIndex].GetComponent<Image>().sprite;
+
+        if (!DataManager.Instance.Loaded)
+        {
+            SceneManager.LoadScene(1);
+            Debug.Log("Need a Profile, Loading Profile Scene");
+        }
     }
 
     void Update()

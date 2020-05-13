@@ -62,33 +62,37 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\GameSparks\Editor\GameSparksEditorFormUpload.cs" />
-    <Compile Include="Assets\GameSparks\Editor\GameSparksPopUp.cs" />
-    <Compile Include="Assets\GameSparks\Editor\GameSparksRestApi.cs" />
-    <Compile Include="Assets\GameSparks\Editor\GameSparksRestWindow.cs" />
-    <Compile Include="Assets\GameSparks\Editor\GameSparksSettingsEditor.cs" />
-    <Compile Include="Assets\GameSparks\Editor\GameSparksUnityInspector.cs" />
-    <Compile Include="Assets\GooglePlayGames\Editor\GPGSAndroidSetupUI.cs" />
-    <Compile Include="Assets\GooglePlayGames\Editor\GPGSDocsUI.cs" />
-    <Compile Include="Assets\GooglePlayGames\Editor\GPGSPostBuild.cs" />
-    <Compile Include="Assets\GooglePlayGames\Editor\GPGSProjectSettings.cs" />
-    <Compile Include="Assets\GooglePlayGames\Editor\GPGSStrings.cs" />
-    <Compile Include="Assets\GooglePlayGames\Editor\GPGSUpgrader.cs" />
-    <Compile Include="Assets\GooglePlayGames\Editor\GPGSUtil.cs" />
-    <Compile Include="Assets\GooglePlayGames\Editor\NearbyConnectionUI.cs" />
-    <Compile Include="Assets\ProceduralUIImage\Editor\FreeModifierEditor.cs" />
-    <Compile Include="Assets\ProceduralUIImage\Editor\ModifierUtility.cs" />
-    <Compile Include="Assets\ProceduralUIImage\Editor\ProceduralImageEditor.cs" />
-    <Compile Include="Assets\ProceduralUIImage\Editor\ProceduralImageEditorUtility.cs" />
+    <Compile Include="Assets\Assets\GameSparks\Editor\GameSparksEditorFormUpload.cs" />
+    <Compile Include="Assets\Assets\GameSparks\Editor\GameSparksPopUp.cs" />
+    <Compile Include="Assets\Assets\GameSparks\Editor\GameSparksRestApi.cs" />
+    <Compile Include="Assets\Assets\GameSparks\Editor\GameSparksRestWindow.cs" />
+    <Compile Include="Assets\Assets\GameSparks\Editor\GameSparksSettingsEditor.cs" />
+    <Compile Include="Assets\Assets\GameSparks\Editor\GameSparksUnityInspector.cs" />
+    <Compile Include="Assets\Assets\GooglePlayGames\Editor\GPGSAndroidSetupUI.cs" />
+    <Compile Include="Assets\Assets\GooglePlayGames\Editor\GPGSDocsUI.cs" />
+    <Compile Include="Assets\Assets\GooglePlayGames\Editor\GPGSPostBuild.cs" />
+    <Compile Include="Assets\Assets\GooglePlayGames\Editor\GPGSProjectSettings.cs" />
+    <Compile Include="Assets\Assets\GooglePlayGames\Editor\GPGSStrings.cs" />
+    <Compile Include="Assets\Assets\GooglePlayGames\Editor\GPGSUpgrader.cs" />
+    <Compile Include="Assets\Assets\GooglePlayGames\Editor\GPGSUtil.cs" />
+    <Compile Include="Assets\Assets\GooglePlayGames\Editor\NearbyConnectionUI.cs" />
+    <Compile Include="Assets\Assets\ProceduralUIImage\Editor\FreeModifierEditor.cs" />
+    <Compile Include="Assets\Assets\ProceduralUIImage\Editor\ModifierUtility.cs" />
+    <Compile Include="Assets\Assets\ProceduralUIImage\Editor\ProceduralImageEditor.cs" />
+    <Compile Include="Assets\Assets\ProceduralUIImage\Editor\ProceduralImageEditorUtility.cs" />
+    <Compile Include="Assets\Scripts\Editor\Audios\AudioChannelControllerEditor.cs" />
+    <Compile Include="Assets\Scripts\Editor\Audios\AudioUtils.cs" />
     <Compile Include="Assets\Scripts\Editor\DataManger_Editor.cs" />
     <Compile Include="Assets\Scripts\Editor\ReadOnlyDrawer.cs" />
-    <None Include="Assets\PlayServicesResolver\Editor\play-services-resolver_v1.2.105.0.txt" />
-    <None Include="Assets\GooglePlayGames\Editor\GooglePlayGamesPlugin_v0.9.64.txt" />
-    <None Include="Assets\GooglePlayGames\Editor\GooglePlayGamesPluginDependencies.xml" />
-    <None Include="Assets\GooglePlayGames\Editor\template-GameInfo.txt" />
-    <None Include="Assets\GooglePlayGames\Editor\template-AndroidManifest.txt" />
-    <None Include="Assets\GooglePlayGames\Editor\m2repository\com\google\games\gpgs-plugin-support\maven-metadata.xml" />
-    <None Include="Assets\GooglePlayGames\Editor\template-Constants.txt" />
+    <Compile Include="Assets\Scripts\Editor\SoundEditorWindow.cs" />
+    <Compile Include="Assets\Scripts\Editor\Utils\EditorUtils.cs" />
+    <None Include="Assets\Assets\PlayServicesResolver\Editor\play-services-resolver_v1.2.105.0.txt" />
+    <None Include="Assets\Assets\GooglePlayGames\Editor\GooglePlayGamesPlugin_v0.9.64.txt" />
+    <None Include="Assets\Assets\GooglePlayGames\Editor\GooglePlayGamesPluginDependencies.xml" />
+    <None Include="Assets\Assets\GooglePlayGames\Editor\template-GameInfo.txt" />
+    <None Include="Assets\Assets\GooglePlayGames\Editor\template-AndroidManifest.txt" />
+    <None Include="Assets\Assets\GooglePlayGames\Editor\m2repository\com\google\games\gpgs-plugin-support\maven-metadata.xml" />
+    <None Include="Assets\Assets\GooglePlayGames\Editor\template-Constants.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
@@ -323,30 +327,6 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
-    <Reference Include="BouncyCastle_GameSparks">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/GameSparks/Plugins/BouncyCastle_GameSparks.dll</HintPath>
-    </Reference>
-    <Reference Include="GameSparks.Api">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/GameSparks/Plugins/GameSparks.Api.dll</HintPath>
-    </Reference>
-    <Reference Include="GameSparks">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/GameSparks/Plugins/GameSparks.dll</HintPath>
-    </Reference>
-    <Reference Include="GameSparksRT">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/GameSparks/Plugins/GameSparksRT.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.IOSResolver_v1.2.105.0">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/PlayServicesResolver/Editor/Google.IOSResolver_v1.2.105.0.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.JarResolver_v1.2.105.0">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/PlayServicesResolver/Editor/Google.JarResolver_v1.2.105.0.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.VersionHandler">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/PlayServicesResolver/Editor/Google.VersionHandler.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.VersionHandlerImpl_v1.2.105.0">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/PlayServicesResolver/Editor/Google.VersionHandlerImpl_v1.2.105.0.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
     </Reference>
@@ -361,6 +341,30 @@
     </Reference>
     <Reference Include="UnityEditor.Purchasing">
       <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.unity.purchasing@2.0.6/Editor/UnityEditor.Purchasing.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.VersionHandler">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Assets/PlayServicesResolver/Editor/Google.VersionHandler.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.JarResolver_v1.2.105.0">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Assets/PlayServicesResolver/Editor/Google.JarResolver_v1.2.105.0.dll</HintPath>
+    </Reference>
+    <Reference Include="GameSparks.Api">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Assets/GameSparks/Plugins/GameSparks.Api.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.IOSResolver_v1.2.105.0">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Assets/PlayServicesResolver/Editor/Google.IOSResolver_v1.2.105.0.dll</HintPath>
+    </Reference>
+    <Reference Include="GameSparks">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Assets/GameSparks/Plugins/GameSparks.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle_GameSparks">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Assets/GameSparks/Plugins/BouncyCastle_GameSparks.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.VersionHandlerImpl_v1.2.105.0">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Assets/PlayServicesResolver/Editor/Google.VersionHandlerImpl_v1.2.105.0.dll</HintPath>
+    </Reference>
+    <Reference Include="GameSparksRT">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Assets/GameSparks/Plugins/GameSparksRT.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.10f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>

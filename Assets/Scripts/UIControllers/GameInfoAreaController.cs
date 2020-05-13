@@ -48,13 +48,13 @@ public class GameInfoAreaController : MonoBehaviour
         switch (prefab.GetComponent<TimerUIController>().type)
         {
             case TimerType.Disorienting:
-                prefab.GetComponent<TimerUIController>().OnTimeUp.AddListener(Player.current.Undisorient);
+                newTimer.GetComponent<TimerUIController>().OnTimeUp.AddListener(Player.current.Undisorient);
                 break;
             case TimerType.Double:
-                prefab.GetComponent<TimerUIController>().OnTimeUp.AddListener(GameSceneManager.current.UnsetDouble);
+                newTimer.GetComponent<TimerUIController>().OnTimeUp.AddListener(GameSceneManager.current.UnsetDouble);
                 break;
             case TimerType.Triple:
-                prefab.GetComponent<TimerUIController>().OnTimeUp.AddListener(GameSceneManager.current.UnsetTriple);
+                newTimer.GetComponent<TimerUIController>().OnTimeUp.AddListener(GameSceneManager.current.UnsetTriple);
                 break;
             default:
                 break;
@@ -100,12 +100,4 @@ public class GameInfoAreaController : MonoBehaviour
         }
         return false;
     }
-    //public int GetTimerIndex(TimerType type)
-    //{
-    //    for (int i = 0; i < TimerObjectList; i++)
-    //    {
-    //        if (g.GetComponent<TimerUIController>().type == type) return true;
-    //    }
-    //    return -1;
-    //}
 }

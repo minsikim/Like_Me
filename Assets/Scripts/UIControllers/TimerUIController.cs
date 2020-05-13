@@ -24,7 +24,6 @@ public class TimerUIController : MonoBehaviour
         {
             OnStart.Invoke();
         }
-        Debug.Log("TimerUIController: " + transform.localPosition);
     }
 
     // Update is called once per frame

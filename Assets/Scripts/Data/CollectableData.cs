@@ -10,15 +10,13 @@ public class CollectableData : ScriptableObject
 
     public GameObject GetPrefab(CollectableType type)
     {
-        GameObject prefab = new GameObject();
-
         foreach(CollectableSet s in Collectables)
         {
             if (s.type == type)
-                prefab = s.prefab;
+                return s.prefab;
         }
 
-        return prefab;
+        return null;
     }
 }
 

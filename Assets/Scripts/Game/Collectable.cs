@@ -13,11 +13,14 @@ public class Collectable : MonoBehaviour
 
     private float _mapHeight = 8f;
 
+    private AudioChannelController _sfxController;
+
     public CollectableType collectableType;
 
     private void Awake()
     {
         gameObject.GetComponent<Rigidbody2D>().gravityScale = gravity;
+        _sfxController = GameInstance.Instance._audioManager.SFXController;
     }
 
     void Start()
@@ -110,6 +113,7 @@ public class Collectable : MonoBehaviour
                 break;
             case CollectableType.Death:
 #if UNITY_EDITOR
+                _player.OnPlayerDeath();
                 Debug.Log("Died in Editor");
 #else
                 _player.OnPlayerDeath();
@@ -118,6 +122,20 @@ public class Collectable : MonoBehaviour
             default:
                 break;
         }
+
+        if(collectableType == CollectableType.Death)
+        {
+            _sfxController.PlayOneShot(_sfxController.Audios[3]);
+        }
+        else if (collectableType == CollectableType.Disorienting)
+        {
+            _sfxController.PlayOneShot(_sfxController.Audios[2]);
+        }
+        else
+        {
+            _sfxController.PlayOneShot(_sfxController.Audios[1]);
+        }
+
         if(particleEffect != null)
         {
             Instantiate(particleEffect, transform.position, transform.rotation);

@@ -62,6 +62,8 @@ public class GameSceneManager : MonoBehaviour
 
     private DateTime _startTime;
 
+    private AudioChannelController _bgmContoller;
+
     public Level currentLevel;
 
     private void Awake()
@@ -81,7 +83,21 @@ public class GameSceneManager : MonoBehaviour
 
         _userProfileImage.GetComponent<Image>().sprite = profileData.ProfileImages[profileIndex].GetComponent<Image>().sprite;
 
+        _bgmContoller = GameInstance.Instance._audioManager.MusicController;
+
+        if (!_bgmContoller.IsPlaying(_bgmContoller.Audios[0]))
+        {
+            _bgmContoller.StopAll();
+            _bgmContoller.Play(_bgmContoller.Audios[0]);
+        }
+
         GameoverUIDisable();
+
+        if (!DataManager.Instance.Loaded)
+        {
+            SceneManager.LoadScene(1);
+            Debug.Log("Need a Profile, Loading Profile Scene");
+        }
     }
 
     void Update()
@@ -112,11 +128,17 @@ public class GameSceneManager : MonoBehaviour
         //Enable SpawnManager
         player.SetActive(true);
         player.GetComponent<Player>()._isDead = false;
-        Player._isDisoriented = false;
+        Player.current._isDisoriented = false;
         //Enable Player
         _spawnManager.SetActive(true);
         _spawnManager.GetComponent<SpawnManager>().CallSpawn();
-        
+
+        if (!_bgmContoller.IsPlaying(_bgmContoller.Audios[1]))
+        {
+            _bgmContoller.StopAll();
+            _bgmContoller.Play(_bgmContoller.Audios[1]);
+        }
+
         _playing = true;
     }
     public void OnGameOver()
@@ -139,6 +161,13 @@ public class GameSceneManager : MonoBehaviour
         player.SetActive(false);
         _spawnManager.SetActive(false);
         GameoverUIEnable();
+
+        if (!_bgmContoller.IsPlaying(_bgmContoller.Audios[0]))
+        {
+            _bgmContoller.StopAll();
+            _bgmContoller.Play(_bgmContoller.Audios[0]);
+        }
+
         _playing = false;
     }
 
@@ -154,12 +183,12 @@ public class GameSceneManager : MonoBehaviour
 
     public void AddLikes(int amount)
     {
-        if(_double)
-        {
-            amount = amount * 2;
-        }else if (_triple)
+        if(_triple)
         {
             amount = amount * 3;
+        }else if (_double)
+        {
+            amount = amount * 2;
         }
         //Update Game Data: Likes
         Likes += amount;

@@ -11,15 +11,13 @@ public class TimerData : ScriptableObject
 
     public GameObject GetPrefab(TimerType type)
     {
-        GameObject prefab = new GameObject();
-
         foreach(TimerSet t in TimerSets)
         {
             if (type == t.type)
-                prefab = t.prefab;
+                return t.prefab;
         }
 
-        return prefab;
+        return null;
     }
 }
 [Serializable]

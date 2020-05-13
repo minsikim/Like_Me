@@ -1,14 +1,15 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class DataManager : MonoBehaviour
 {
-    public static DataManager Instance { get; private set; }
+    private static DataManager _instance;
+    public static DataManager Instance { get { return _instance; } }
 
     private const string USER_DATA_PATH = "/UserData.json";
+
+    public bool Loaded = false;
 
     public int Followers = 0;
     public string UserName = "";
@@ -18,9 +19,9 @@ public class DataManager : MonoBehaviour
 
     void Awake()
     {
-        if(Instance == null)
+        if(_instance == null)
         {
-            Instance = this;
+            _instance = this;
             DontDestroyOnLoad(gameObject);
         }
         else
@@ -77,7 +78,7 @@ public class DataManager : MonoBehaviour
             case int n when (n >= 100000000 && n < 1000000000):
                 currentLevel = Level.Follower100M;
                 break;
-            case int n when (n >= 100000000 && n < 10000000000):
+            case int n when (n >= 100000000):
                 currentLevel = Level.Follower1B;
                 break;
             default:
@@ -93,27 +94,20 @@ public class DataManager : MonoBehaviour
         {
             string _dataToString = System.IO.File.ReadAllText(Application.persistentDataPath + USER_DATA_PATH);
             SaveObject loadedObject = JsonUtility.FromJson<SaveObject>(_dataToString);
-            Followers =     loadedObject.followers;
-            UserName =      loadedObject.userName;
-            id =            loadedObject.id;
-            PhotoIndex =    loadedObject.photoIndex;
-            CurrentLevel =  loadedObject.currentLevel;
 
-            if (SceneManager.GetActiveScene().buildIndex == 0)
-            {
-                SceneManager.LoadScene(1);
-            }
+            Followers       = loadedObject.followers;
+            UserName        = loadedObject.userName;
+            id              = loadedObject.id;
+            PhotoIndex      = loadedObject.photoIndex;
+            CurrentLevel    = loadedObject.currentLevel;
+
+            Loaded = true;
             Debug.Log("Loaded:" + _dataToString);
         }
         else
         {
-            Debug.Log("no file");
-
-            if (SceneManager.GetActiveScene().buildIndex != 0)
-            {
-                SceneManager.LoadScene(0);
-                Debug.Log("Need a Profile, Loading Profile Scene");
-            }
+            Loaded = false;
+            Debug.Log("NO Data file in " + Application.persistentDataPath + USER_DATA_PATH);
         }
         
     }
