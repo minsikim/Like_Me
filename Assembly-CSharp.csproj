@@ -296,6 +296,7 @@
     <Compile Include="Assets\Scripts\Server\GameSparksManager.cs" />
     <Compile Include="Assets\Scripts\Server\RegisterPlayer.cs" />
     <Compile Include="Assets\Scripts\SpawnManager.cs" />
+    <Compile Include="Assets\Scripts\UIControllers\FeedPostController.cs" />
     <Compile Include="Assets\Scripts\UIControllers\GameInfoAreaController.cs" />
     <Compile Include="Assets\Scripts\UIControllers\GameLikeController.cs" />
     <Compile Include="Assets\Scripts\UIControllers\ProfileController.cs" />

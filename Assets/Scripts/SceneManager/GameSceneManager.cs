@@ -26,6 +26,7 @@ public class GameSceneManager : MonoBehaviour
     public bool _triple = false;
 
     public ProfileData profileData;
+    public ImageListData postImages;
 
     public GameObject player;
     [SerializeField]
@@ -163,6 +164,8 @@ public class GameSceneManager : MonoBehaviour
         }
 
         _playing = false;
+
+        SavePost();
     }
 
     public void GameoverUIEnable()
@@ -215,5 +218,16 @@ public class GameSceneManager : MonoBehaviour
     public void UnsetTriple()
     {
         _triple = false;
+    }
+    public void SavePost()
+    {
+        PostData pD = new PostData
+        {
+            SpriteIndex = UnityEngine.Random.Range(0, postImages.Images.Count),
+            Likes = Likes,
+            PostTime = DateTime.Now
+        };
+        DataManager.Instance.PostDatas.Add(pD);
+        DataManager.Instance.SaveData();
     }
 }

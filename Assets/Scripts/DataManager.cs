@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,11 +12,16 @@ public class DataManager : MonoBehaviour
 
     public bool Loaded = false;
 
-    public int Followers = 0;
+    private Guid id;
+
     public string UserName = "";
     public int PhotoIndex = 0;
     public Level CurrentLevel = Level.Follower1;
-    private Guid id;
+
+    public int Followers = 0;
+
+    public List<PostData> PostDatas;
+    
 
     void Awake()
     {
@@ -33,6 +39,63 @@ public class DataManager : MonoBehaviour
     private void Start()
     {
         LoadData();
+    }
+
+    private void LoadData()
+    {
+        if (System.IO.File.Exists(Application.persistentDataPath + USER_DATA_PATH))
+        {
+            string _dataToString = System.IO.File.ReadAllText(Application.persistentDataPath + USER_DATA_PATH);
+            SaveObject loadedObject = JsonUtility.FromJson<SaveObject>(_dataToString);
+
+            Followers       = loadedObject.followers;
+            UserName        = loadedObject.userName;
+            id              = loadedObject.id;
+            PhotoIndex      = loadedObject.photoIndex;
+            CurrentLevel    = loadedObject.currentLevel;
+            PostDatas       = loadedObject.postDatas;
+
+            CalculateLevel(Followers);
+
+            Loaded = true;
+            Debug.Log("Loaded:" + _dataToString);
+        }
+        else
+        {
+            Loaded = false;
+            Debug.Log("NO Data file in " + Application.persistentDataPath + USER_DATA_PATH);
+        }
+        
+    }
+
+    public void SaveData()
+    {
+        SaveObject saveObject = new SaveObject
+        {
+            followers = Followers,
+            userName = UserName,
+            id = id,
+            photoIndex = PhotoIndex,
+            currentLevel = CurrentLevel,
+            postDatas = PostDatas
+        };
+        string _jsonData = JsonUtility.ToJson(saveObject);
+        System.IO.File.WriteAllText(Application.persistentDataPath + USER_DATA_PATH, _jsonData);
+    }
+
+    public void NewId()
+    {
+        id = Guid.NewGuid();
+    }
+
+    private class SaveObject
+    {
+        public int followers;
+        public string userName;
+        public Guid id;
+        public int photoIndex;
+        public Level currentLevel;
+        public List<PostData> postDatas;
     }
 
     public int AddFollowers(int likes)
@@ -88,57 +151,12 @@ public class DataManager : MonoBehaviour
         CurrentLevel = currentLevel;
     }
 
-    private void LoadData()
-    {
-        if (System.IO.File.Exists(Application.persistentDataPath + USER_DATA_PATH))
-        {
-            string _dataToString = System.IO.File.ReadAllText(Application.persistentDataPath + USER_DATA_PATH);
-            SaveObject loadedObject = JsonUtility.FromJson<SaveObject>(_dataToString);
-
-            Followers       = loadedObject.followers;
-            UserName        = loadedObject.userName;
-            id              = loadedObject.id;
-            PhotoIndex      = loadedObject.photoIndex;
-            CurrentLevel    = loadedObject.currentLevel;
-
-            Loaded = true;
-            Debug.Log("Loaded:" + _dataToString);
-        }
-        else
-        {
-            Loaded = false;
-            Debug.Log("NO Data file in " + Application.persistentDataPath + USER_DATA_PATH);
-        }
-        
-    }
-
-    public void SaveData()
-    {
-        SaveObject saveObject = new SaveObject
-        {
-            followers = Followers,
-            userName = UserName,
-            id = id,
-            photoIndex = PhotoIndex,
-            currentLevel = CurrentLevel
-        };
-        string _jsonData = JsonUtility.ToJson(saveObject);
-        System.IO.File.WriteAllText(Application.persistentDataPath + USER_DATA_PATH, _jsonData);
-    }
-
-    public void NewId()
-    {
-        id = Guid.NewGuid();
-    }
-
-    private class SaveObject
-    {
-        public int followers;
-        public string userName;
-        public Guid id;
-        public int photoIndex;
-        public Level currentLevel;
-    }
-
 }
 
+[Serializable]
+public struct PostData
+{
+    public int SpriteIndex;
+    public int Likes;
+    public DateTime PostTime;
+}
