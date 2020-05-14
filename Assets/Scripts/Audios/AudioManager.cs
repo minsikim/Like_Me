@@ -6,7 +6,11 @@ using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour 
 {
-	[SerializeField]
+    private static AudioManager _instance;
+
+    public static AudioManager Instance { get { return _instance; } }
+
+    [SerializeField]
 	private AudioSettings _settings;
 
 	[SerializeField]
@@ -32,7 +36,15 @@ public class AudioManager : MonoBehaviour
 
 	private void Awake()
 	{
-		DontDestroyOnLoad(gameObject);
+        if (_instance == null)
+        {
+            _instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
 	}
 
 	public void SetMusicVolume(float target, float duration, SetVolumeEndDelegate endDelegate = null)

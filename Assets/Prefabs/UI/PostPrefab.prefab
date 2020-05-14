@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5766497122829753033}
   - component: {fileID: 5766497122829753030}
   - component: {fileID: 5766497122829753031}
+  - component: {fileID: -8766350942216228137}
   m_Layer: 5
   m_Name: PostPrefab
   m_TagString: Untagged
@@ -36,7 +37,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -147.5}
-  m_SizeDelta: {x: 295, y: 295}
+  m_SizeDelta: {x: 297.5, y: 297.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5766497122829753033
 CanvasRenderer:
@@ -117,6 +118,34 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5766497122829753030}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -8766350942216228137}
+        m_MethodName: OnLoadPostScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &-8766350942216228137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5766497122829753029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db42e2ec55d91a04c91b3b626b9a1627, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  postData:
+    id: 
+    SpriteIndex: 0
+    Likes: 0
+    PostTime: 

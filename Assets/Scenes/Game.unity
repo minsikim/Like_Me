@@ -837,8 +837,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 197294538}
-          m_MethodName: setDirection
-          m_Mode: 4
+          m_MethodName: OnRightDown
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -854,8 +854,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 197294538}
-          m_MethodName: setDirection
-          m_Mode: 4
+          m_MethodName: OnRightUp
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2112,8 +2112,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 197294538}
-          m_MethodName: setDirection
-          m_Mode: 4
+          m_MethodName: OnLeftDown
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2129,8 +2129,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 197294538}
-          m_MethodName: setDirection
-          m_Mode: 4
+          m_MethodName: OnLeftUp
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2833,6 +2833,7 @@ MonoBehaviour:
   _double: 0
   _triple: 0
   profileData: {fileID: 11400000, guid: b3c3df69f6c46c042b3a9c698ff6c3a6, type: 2}
+  postImages: {fileID: 11400000, guid: 8451309a9bf7aa64e8ad92128dafb134, type: 2}
   player: {fileID: 197294537}
   _collectableContainer: {fileID: 158261697}
   InGameCanvas: {fileID: 1751685320}

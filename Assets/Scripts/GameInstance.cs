@@ -22,29 +22,20 @@ public class GameInstance : MonoBehaviour
         }
 
         Application.targetFrameRate = 60;
-
-        _audioManager = Object.FindObjectOfType<AudioManager>();
     }
     private void Start()
     {
+#if UNITY_EDITOR
         Invoke("StartGame", 2.0f);
+#else
+        Invoke("StartGame", 2.0f);
+#endif
     }
 
     public void StartGame()
     {
-#if UNITY_EDITOR
-
-#else
-        SceneManager.LoadScene(1);
-#endif
-        //if (DataManager.Instance.Loaded)
-        //{
-        //    SceneManager.LoadScene(2);
-        //}
-        //else
-        //{
-        //    SceneManager.LoadScene(1);
-        //}
+        SceneManager.LoadScene("FirstPlay");
+        Debug.Log("StartGame");
     }
 
     public void QuitApplication()

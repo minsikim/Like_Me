@@ -84,7 +84,7 @@ public class GameSceneManager : MonoBehaviour
 
         _userProfileImage.GetComponent<Image>().sprite = profileData.ProfileImages[profileIndex].GetComponent<Image>().sprite;
 
-        _bgmContoller = GameInstance.Instance._audioManager.MusicController;
+        _bgmContoller = AudioManager.Instance.MusicController;
 
         if (!_bgmContoller.IsPlaying(_bgmContoller.Audios[0]))
         {
@@ -223,9 +223,11 @@ public class GameSceneManager : MonoBehaviour
     {
         PostData pD = new PostData
         {
+            id = Guid.NewGuid().ToString(),
             SpriteIndex = UnityEngine.Random.Range(0, postImages.Images.Count),
             Likes = Likes,
-            PostTime = DateTime.Now
+            PostTime = DateTime.Now.ToString("MM/dd/yyyy h:mm tt")
+
         };
         DataManager.Instance.PostDatas.Add(pD);
         DataManager.Instance.SaveData();

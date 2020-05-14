@@ -20,7 +20,7 @@ public class Collectable : MonoBehaviour
     private void Awake()
     {
         gameObject.GetComponent<Rigidbody2D>().gravityScale = gravity;
-        _sfxController = GameInstance.Instance._audioManager.SFXController;
+        _sfxController = AudioManager.Instance.SFXController;
     }
 
     void Start()

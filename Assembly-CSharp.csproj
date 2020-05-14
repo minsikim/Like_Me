@@ -280,6 +280,7 @@
     <Compile Include="Assets\Scripts\CollectedText.cs" />
     <Compile Include="Assets\Scripts\Data\CollectableData.cs" />
     <Compile Include="Assets\Scripts\Data\ImageListData.cs" />
+    <Compile Include="Assets\Scripts\Data\PostData.cs" />
     <Compile Include="Assets\Scripts\Data\ProfileData.cs" />
     <Compile Include="Assets\Scripts\Data\StageData.cs" />
     <Compile Include="Assets\Scripts\Data\TimerData.cs" />
@@ -292,6 +293,7 @@
     <Compile Include="Assets\Scripts\SceneManager\FirstPlaySceneManager.cs" />
     <Compile Include="Assets\Scripts\SceneManager\GameSceneManager.cs" />
     <Compile Include="Assets\Scripts\SceneManager\PlayerFeedSceneManager.cs" />
+    <Compile Include="Assets\Scripts\SceneManager\PostSceneManager.cs" />
     <Compile Include="Assets\Scripts\Server\AuthenticatePlayer.cs" />
     <Compile Include="Assets\Scripts\Server\GameSparksManager.cs" />
     <Compile Include="Assets\Scripts\Server\RegisterPlayer.cs" />
@@ -299,6 +301,7 @@
     <Compile Include="Assets\Scripts\UIControllers\FeedPostController.cs" />
     <Compile Include="Assets\Scripts\UIControllers\GameInfoAreaController.cs" />
     <Compile Include="Assets\Scripts\UIControllers\GameLikeController.cs" />
+    <Compile Include="Assets\Scripts\UIControllers\PostController.cs" />
     <Compile Include="Assets\Scripts\UIControllers\ProfileController.cs" />
     <Compile Include="Assets\Scripts\UIControllers\TimerUIController.cs" />
     <Compile Include="Assets\Scripts\Utils\Timer.cs" />
@@ -327,22 +330,22 @@
     <None Include="Assets\Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\Assets\GooglePlayGames\Plugins\Android\GooglePlayGamesManifest.plugin\AndroidManifest.xml" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Users/Minsi/Documents/GitHub/Like_Me/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/Minsi/Documents/GitHub/Like_Me/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/Minsi/Documents/GitHub/Like_Me/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/Minsi/Documents/GitHub/Like_Me/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/Minsi/Documents/GitHub/Like_Me/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>C:/Users/Minsi/Documents/GitHub/Like_Me/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.10f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -522,25 +525,25 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.10f1/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="BouncyCastle_GameSparks">
-      <HintPath>C:/Users/Minsi/Documents/GitHub/Like_Me/Assets/Assets/GameSparks/Plugins/BouncyCastle_GameSparks.dll</HintPath>
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Assets/GameSparks/Plugins/BouncyCastle_GameSparks.dll</HintPath>
     </Reference>
     <Reference Include="GameSparks.Api">
-      <HintPath>C:/Users/Minsi/Documents/GitHub/Like_Me/Assets/Assets/GameSparks/Plugins/GameSparks.Api.dll</HintPath>
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Assets/GameSparks/Plugins/GameSparks.Api.dll</HintPath>
     </Reference>
     <Reference Include="GameSparks">
-      <HintPath>C:/Users/Minsi/Documents/GitHub/Like_Me/Assets/Assets/GameSparks/Plugins/GameSparks.dll</HintPath>
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Assets/GameSparks/Plugins/GameSparks.dll</HintPath>
     </Reference>
     <Reference Include="GameSparksRT">
-      <HintPath>C:/Users/Minsi/Documents/GitHub/Like_Me/Assets/Assets/GameSparks/Plugins/GameSparksRT.dll</HintPath>
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Assets/GameSparks/Plugins/GameSparksRT.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>C:/Users/Minsi/Documents/GitHub/Like_Me/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>C:/Users/Minsi/Documents/GitHub/Like_Me/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>C:/Users/Minsi/Documents/GitHub/Like_Me/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.10f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

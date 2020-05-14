@@ -8,7 +8,7 @@ public class DataManager : MonoBehaviour
     private static DataManager _instance;
     public static DataManager Instance { get { return _instance; } }
 
-    private const string USER_DATA_PATH = "/UserData.json";
+    public const string USER_DATA_PATH = "/UserData.json";
 
     public bool Loaded = false;
 
@@ -20,7 +20,9 @@ public class DataManager : MonoBehaviour
 
     public int Followers = 0;
 
-    public List<PostData> PostDatas;
+    public List<PostData> PostDatas = new List<PostData>();
+
+    public PostData CurrentPost;
     
 
     void Awake()
@@ -53,7 +55,12 @@ public class DataManager : MonoBehaviour
             id              = loadedObject.id;
             PhotoIndex      = loadedObject.photoIndex;
             CurrentLevel    = loadedObject.currentLevel;
-            PostDatas       = loadedObject.postDatas;
+            if(loadedObject.postDatas != null)
+            {
+                PostDatas = loadedObject.postDatas;
+                CurrentPost = PostDatas[0];
+            }
+                
 
             CalculateLevel(Followers);
 
@@ -81,21 +88,13 @@ public class DataManager : MonoBehaviour
         };
         string _jsonData = JsonUtility.ToJson(saveObject);
         System.IO.File.WriteAllText(Application.persistentDataPath + USER_DATA_PATH, _jsonData);
+
+        Debug.Log("Saved:" + _jsonData);
     }
 
     public void NewId()
     {
         id = Guid.NewGuid();
-    }
-
-    private class SaveObject
-    {
-        public int followers;
-        public string userName;
-        public Guid id;
-        public int photoIndex;
-        public Level currentLevel;
-        public List<PostData> postDatas;
     }
 
     public int AddFollowers(int likes)
@@ -151,12 +150,14 @@ public class DataManager : MonoBehaviour
         CurrentLevel = currentLevel;
     }
 
-}
+    private class SaveObject
+    {
+        public int followers;
+        public string userName;
+        public Guid id;
+        public int photoIndex;
+        public Level currentLevel;
+        public List<PostData> postDatas;
+    }
 
-[Serializable]
-public struct PostData
-{
-    public int SpriteIndex;
-    public int Likes;
-    public DateTime PostTime;
 }

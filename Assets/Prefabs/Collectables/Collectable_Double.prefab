@@ -112,8 +112,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dropToFloorSpeed: 5
   gravity: 0.6
-  spawnPerSecStart: 0.2
-  spawnPerSecMax: 0.4
+  spawnPerSecStart: 0.1
+  spawnPerSecMax: 0.2
   particleEffect: {fileID: 0}
   collectableType: 19
 --- !u!50 &6023071852954719216
