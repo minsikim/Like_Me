@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,8 +7,6 @@ public class GameInstance : MonoBehaviour
 {
     private static GameInstance _instance;
     public static GameInstance Instance { get { return _instance; } }
-
-    public AudioManager _audioManager;
 
     private void Awake()
     {
@@ -26,21 +25,31 @@ public class GameInstance : MonoBehaviour
     private void Start()
     {
 #if UNITY_EDITOR
-        Invoke("StartGame", 2.0f);
+        if(SceneManager.GetActiveScene().name == "_Preload")
+        {
+            Invoke("ToGameScene", 2.0f);
+        }
 #else
-        Invoke("StartGame", 2.0f);
+        Invoke("ToGameScene", 2.0f);
 #endif
     }
 
-    public void StartGame()
+    public void ToGameScene()
     {
         SceneManager.LoadScene("FirstPlay");
-        Debug.Log("StartGame");
     }
 
     public void QuitApplication()
     {
         Application.Quit();
     }
-     
+
+    public event Action onStartGame;
+    public void StartGame()
+    {
+        if(onStartGame != null)
+        {
+            onStartGame();
+        }
+    }
 }

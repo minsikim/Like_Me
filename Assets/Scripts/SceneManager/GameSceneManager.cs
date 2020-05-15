@@ -93,6 +93,10 @@ public class GameSceneManager : MonoBehaviour
         }
 
         GameoverUIDisable();
+
+        GameInstance.Instance.onStartGame += StartGame;
+
+        PopupCanvasManager.Instance.OpenPopup(PopupCanvasManager.Instance.BeforeGamePopupPrefab);
     }
 
     void Update()
@@ -102,6 +106,11 @@ public class GameSceneManager : MonoBehaviour
             _gameDurationText.text = (int)(DateTime.Now - _startTime).TotalSeconds + " sec";
         }
         
+    }
+
+    private void OnDestroy()
+    {
+        GameInstance.Instance.onStartGame -= StartGame;
     }
 
     public void StartGame()
