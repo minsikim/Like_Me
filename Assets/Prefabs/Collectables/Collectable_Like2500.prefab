@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropToFloorSpeed: 1.5
-  gravity: 0.6
+  gravity: 0.55
   spawnPerSecStart: 0.15
   spawnPerSecMax: 0.6
   particleEffect: {fileID: 9109570832995849331, guid: 2c729d9a14c8dfc41b5d8656535b61bd,

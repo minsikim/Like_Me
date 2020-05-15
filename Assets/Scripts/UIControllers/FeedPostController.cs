@@ -43,16 +43,40 @@ public class FeedPostController : MonoBehaviour
 
         _postDatas.Reverse();
 
-        foreach (PostData _postData in _postDatas)
+        int _bestIndex = GetBestPostIndex(_postDatas);
+
+        for (int i = 0; i < _postDatas.Count; i++)
         {
             GameObject p = Instantiate(PostPrefab, transform);
             p.transform.SetParent(transform);
-            p.GetComponent<PostController>().postData = _postData;
-            p.GetComponent<Image>().sprite = PostImageList.Images[_postData.SpriteIndex];
+            p.GetComponent<PostController>().postData = _postDatas[i];
+            p.GetComponent<Image>().sprite = PostImageList.Images[_postDatas[i].SpriteIndex];
+
+            if(_bestIndex == i)
+            {
+                p.GetComponent<PostController>().best = true;
+            }
+
             _posts.Add(p);
         }
 
         UpdatePostPositions();
+    }
+
+    private int GetBestPostIndex(List<PostData> postDatas)
+    {
+        int bestIndex = 0;
+        int currentBest = 0;
+        for (int i = 0; i < postDatas.Count; i++)
+        {
+            if (currentBest < postDatas[i].Likes)
+            {
+                currentBest = postDatas[i].Likes;
+                bestIndex = i;
+            }
+                
+        }
+        return bestIndex;
     }
 
     public void UpdatePostPositions()

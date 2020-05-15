@@ -54,6 +54,7 @@ public class SpawnManager : MonoBehaviour
         _primaryCollectable.GetComponent<Collectable>().spawnPerSecMax = 8f;
         _secondaryCollectable.GetComponent<Collectable>().spawnPerSecStart = 0.15f;
         _secondaryCollectable.GetComponent<Collectable>().spawnPerSecMax = 0.6f;
+        _secondaryCollectable.transform.localScale *= 1.5f;
 
         //Add collectables to Spawn List
         _spawnPrefabList.Add(_primaryCollectable);
