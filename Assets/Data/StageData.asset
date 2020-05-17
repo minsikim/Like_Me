@@ -16,30 +16,40 @@ MonoBehaviour:
   - StageLevel: 0
     PrimaryCollectable: 0
     SecondaryCollectable: 2
+    StageName: "\uBBF8\uBB3C"
   - StageLevel: 1
     PrimaryCollectable: 1
     SecondaryCollectable: 3
+    StageName: "\uC6D0\uC2DC\uC778"
   - StageLevel: 2
     PrimaryCollectable: 2
     SecondaryCollectable: 5
+    StageName: "\uC778\uAC04"
   - StageLevel: 3
     PrimaryCollectable: 2
     SecondaryCollectable: 5
+    StageName: "\uB178\uC624\uB825\uD558\uB294 \uC778\uAC04"
   - StageLevel: 4
     PrimaryCollectable: 4
     SecondaryCollectable: 7
+    StageName: "\uD799\uD55C \uC778\uAC04"
   - StageLevel: 5
     PrimaryCollectable: 6
     SecondaryCollectable: 9
+    StageName: "\uC778\uD50C\uB8E8\uC5B8\uC11C"
   - StageLevel: 6
     PrimaryCollectable: 8
     SecondaryCollectable: 11
+    StageName: "\uC5F0\uC608\uC778"
   - StageLevel: 7
     PrimaryCollectable: 10
     SecondaryCollectable: 13
+    StageName: "\uC9C0\uAD6C \uB300\uC2A4\uD0C0"
   - StageLevel: 8
     PrimaryCollectable: 12
     SecondaryCollectable: 15
+    StageName: "\uC6B0\uC8FC \uB300\uC2A4\uD0C0"
   - StageLevel: 9
     PrimaryCollectable: 14
     SecondaryCollectable: 16
+    StageName: "\uC678\uACC4\uC778"

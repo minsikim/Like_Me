@@ -27,4 +27,5 @@ public struct StageSetting
     public Level StageLevel;
     public CollectableType PrimaryCollectable;
     public CollectableType SecondaryCollectable;
+    public string StageName;
 }
