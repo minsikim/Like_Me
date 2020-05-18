@@ -62,20 +62,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Assets\GameSparks\Editor\GameSparksEditorFormUpload.cs" />
-    <Compile Include="Assets\Assets\GameSparks\Editor\GameSparksPopUp.cs" />
-    <Compile Include="Assets\Assets\GameSparks\Editor\GameSparksRestApi.cs" />
-    <Compile Include="Assets\Assets\GameSparks\Editor\GameSparksRestWindow.cs" />
-    <Compile Include="Assets\Assets\GameSparks\Editor\GameSparksSettingsEditor.cs" />
-    <Compile Include="Assets\Assets\GameSparks\Editor\GameSparksUnityInspector.cs" />
-    <Compile Include="Assets\Assets\GooglePlayGames\Editor\GPGSAndroidSetupUI.cs" />
-    <Compile Include="Assets\Assets\GooglePlayGames\Editor\GPGSDocsUI.cs" />
-    <Compile Include="Assets\Assets\GooglePlayGames\Editor\GPGSPostBuild.cs" />
-    <Compile Include="Assets\Assets\GooglePlayGames\Editor\GPGSProjectSettings.cs" />
-    <Compile Include="Assets\Assets\GooglePlayGames\Editor\GPGSStrings.cs" />
-    <Compile Include="Assets\Assets\GooglePlayGames\Editor\GPGSUpgrader.cs" />
-    <Compile Include="Assets\Assets\GooglePlayGames\Editor\GPGSUtil.cs" />
-    <Compile Include="Assets\Assets\GooglePlayGames\Editor\NearbyConnectionUI.cs" />
     <Compile Include="Assets\Assets\ProceduralUIImage\Editor\FreeModifierEditor.cs" />
     <Compile Include="Assets\Assets\ProceduralUIImage\Editor\ModifierUtility.cs" />
     <Compile Include="Assets\Assets\ProceduralUIImage\Editor\ProceduralImageEditor.cs" />
@@ -86,13 +72,9 @@
     <Compile Include="Assets\Scripts\Editor\ReadOnlyDrawer.cs" />
     <Compile Include="Assets\Scripts\Editor\SoundEditorWindow.cs" />
     <Compile Include="Assets\Scripts\Editor\Utils\EditorUtils.cs" />
-    <None Include="Assets\Assets\PlayServicesResolver\Editor\play-services-resolver_v1.2.105.0.txt" />
-    <None Include="Assets\Assets\GooglePlayGames\Editor\GooglePlayGamesPlugin_v0.9.64.txt" />
-    <None Include="Assets\Assets\GooglePlayGames\Editor\GooglePlayGamesPluginDependencies.xml" />
-    <None Include="Assets\Assets\GooglePlayGames\Editor\template-GameInfo.txt" />
-    <None Include="Assets\Assets\GooglePlayGames\Editor\template-AndroidManifest.txt" />
-    <None Include="Assets\Assets\GooglePlayGames\Editor\m2repository\com\google\games\gpgs-plugin-support\maven-metadata.xml" />
-    <None Include="Assets\Assets\GooglePlayGames\Editor\template-Constants.txt" />
+    <None Include="Assets\Firebase\Editor\AnalyticsDependencies.xml" />
+    <None Include="Assets\Firebase\Editor\FirebaseAnalytics_version-6.14.0_manifest.txt" />
+    <None Include="Assets\ExternalDependencyManager\Editor\external-dependency-manager_version-1.2.152_manifest.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
@@ -327,29 +309,62 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
-    <Reference Include="BouncyCastle_GameSparks">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Assets/GameSparks/Plugins/BouncyCastle_GameSparks.dll</HintPath>
+    <Reference Include="Google.IOSResolver_v1.2.152">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/ExternalDependencyManager/Editor/Google.IOSResolver_v1.2.152.dll</HintPath>
     </Reference>
-    <Reference Include="GameSparks.Api">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Assets/GameSparks/Plugins/GameSparks.Api.dll</HintPath>
+    <Reference Include="Google.JarResolver_v1.2.152">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/ExternalDependencyManager/Editor/Google.JarResolver_v1.2.152.dll</HintPath>
     </Reference>
-    <Reference Include="GameSparks">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Assets/GameSparks/Plugins/GameSparks.dll</HintPath>
+    <Reference Include="Google.PackageManagerResolver_v1.2.152">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/ExternalDependencyManager/Editor/Google.PackageManagerResolver_v1.2.152.dll</HintPath>
     </Reference>
-    <Reference Include="GameSparksRT">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Assets/GameSparks/Plugins/GameSparksRT.dll</HintPath>
+    <Reference Include="Google.VersionHandlerImpl_v1.2.152">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/ExternalDependencyManager/Editor/Google.VersionHandlerImpl_v1.2.152.dll</HintPath>
     </Reference>
-    <Reference Include="Google.IOSResolver_v1.2.105.0">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Assets/PlayServicesResolver/Editor/Google.IOSResolver_v1.2.105.0.dll</HintPath>
+    <Reference Include="Firebase.Analytics">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Firebase/Plugins/Firebase.Analytics.dll</HintPath>
     </Reference>
-    <Reference Include="Google.JarResolver_v1.2.105.0">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Assets/PlayServicesResolver/Editor/Google.JarResolver_v1.2.105.0.dll</HintPath>
+    <Reference Include="Google.IOSResolver_v1.2.153">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.google.external-dependency-manager@1.2.153/ExternalDependencyManager/Editor/Google.IOSResolver_v1.2.153.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.JarResolver_v1.2.153">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.google.external-dependency-manager@1.2.153/ExternalDependencyManager/Editor/Google.JarResolver_v1.2.153.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.PackageManagerResolver_v1.2.153">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.google.external-dependency-manager@1.2.153/ExternalDependencyManager/Editor/Google.PackageManagerResolver_v1.2.153.dll</HintPath>
     </Reference>
     <Reference Include="Google.VersionHandler">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Assets/PlayServicesResolver/Editor/Google.VersionHandler.dll</HintPath>
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.google.external-dependency-manager@1.2.153/ExternalDependencyManager/Editor/Google.VersionHandler.dll</HintPath>
     </Reference>
-    <Reference Include="Google.VersionHandlerImpl_v1.2.105.0">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Assets/PlayServicesResolver/Editor/Google.VersionHandlerImpl_v1.2.105.0.dll</HintPath>
+    <Reference Include="Google.VersionHandlerImpl_v1.2.153">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.google.external-dependency-manager@1.2.153/ExternalDependencyManager/Editor/Google.VersionHandlerImpl_v1.2.153.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Editor">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.google.firebase.app@6.14.0/Firebase/Editor/Firebase.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.App">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.google.firebase.app@6.14.0/Firebase/Plugins/Firebase.App.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Platform">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.google.firebase.app@6.14.0/Firebase/Plugins/Firebase.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.TaskExtension">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.google.firebase.app@6.14.0/Firebase/Plugins/Firebase.TaskExtension.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.MiniJson">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.google.firebase.app@6.14.0/Firebase/Plugins/Google.MiniJson.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Compat">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.google.firebase.app@6.14.0/Parse/Plugins/dotNet45/Unity.Compat.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tasks">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.google.firebase.app@6.14.0/Parse/Plugins/dotNet45/Unity.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Auth">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.google.firebase.auth@6.14.0/Firebase/Plugins/Firebase.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Database">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.google.firebase.database@6.14.0/Firebase/Plugins/Firebase.Database.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>

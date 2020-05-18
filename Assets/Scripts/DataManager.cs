@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Firebase;
+using Firebase.Database;
+using Firebase.Unity.Editor;
 
 public class DataManager : MonoBehaviour
 {
@@ -9,10 +12,11 @@ public class DataManager : MonoBehaviour
     public static DataManager Instance { get { return _instance; } }
 
     public const string USER_DATA_PATH = "/UserData.json";
+    private DatabaseReference mDatabaseRef;
 
     public bool Loaded = false;
 
-    private Guid id;
+    private string id;
 
     public string UserName = "";
     public int PhotoIndex = 0;
@@ -37,10 +41,37 @@ public class DataManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
     }
 
     private void Start()
     {
+        FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => {
+            var dependencyStatus = task.Result;
+            if (dependencyStatus == Firebase.DependencyStatus.Available)
+            {
+                // Create and hold a reference to your FirebaseApp,
+                // where app is a Firebase.FirebaseApp property of your application class.
+                //   app = Firebase.FirebaseApp.DefaultInstance;
+
+                // Set a flag here to indicate whether Firebase is ready to use by your app.
+                Debug.Log("Passed Firebase requirments");
+
+                FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://likeme-93469.firebaseio.com/");
+                mDatabaseRef = FirebaseDatabase.DefaultInstance.RootReference;
+            }
+            else
+            {
+                Debug.LogError(String.Format(
+                  "Could not resolve all Firebase dependencies: {0}", dependencyStatus));
+                // Firebase Unity SDK is not safe to use here.
+            }
+
+        });
+
+        // Set these values before calling into the realtime database.
+
+
         LoadData();
     }
 
@@ -88,6 +119,9 @@ public class DataManager : MonoBehaviour
             postDatas = PostDatas
         };
         string _jsonData = JsonUtility.ToJson(saveObject);
+
+        mDatabaseRef.Child("users").Child(id).SetRawJsonValueAsync(_jsonData);
+
         System.IO.File.WriteAllText(Application.persistentDataPath + USER_DATA_PATH, _jsonData);
 
         Debug.Log("Saved:" + _jsonData);
@@ -95,7 +129,7 @@ public class DataManager : MonoBehaviour
 
     public void NewId()
     {
-        id = Guid.NewGuid();
+        id = Guid.NewGuid().ToString();
     }
 
     public int AddFollowers(int likes)
@@ -182,7 +216,7 @@ public class DataManager : MonoBehaviour
     {
         public int followers;
         public string userName;
-        public Guid id;
+        public string id;
         public int photoIndex;
         public Level currentLevel;
         public List<PostData> postDatas;
