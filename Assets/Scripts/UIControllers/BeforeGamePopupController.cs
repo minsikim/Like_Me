@@ -40,7 +40,7 @@ public class BeforeGamePopupController : MonoBehaviour
     void Update()
     {
         if(GetComponent<CanvasGroup>().alpha < 1)
-            GetComponent<CanvasGroup>().alpha += Time.deltaTime;
+            GetComponent<CanvasGroup>().alpha += Time.deltaTime * 2f;
     }
     public void Confirm()
     {

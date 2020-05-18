@@ -45,7 +45,7 @@ public class AfterGamePopupController : MonoBehaviour
     void Update()
     {
         if (GetComponent<CanvasGroup>().alpha < 1)
-            GetComponent<CanvasGroup>().alpha += Time.deltaTime;
+            GetComponent<CanvasGroup>().alpha += Time.deltaTime * 2f;
     }
     public void Confirm()
     {
@@ -62,32 +62,26 @@ public class AfterGamePopupController : MonoBehaviour
     public void UpdateInfo()
     {
         //Panel1 update
-        if(DataManager.Instance.PostDatas.Count == 1)
+        bestLikeArea.SetActive(true);
+
+        int _bestLikes = DataManager.Instance.GetBestLikes();
+        if (_bestLikes != 0)
+            bestLikeText.text = "" + _bestLikes;
+        else
+            bestLikeText.text = "첫 게시물!";
+
+        if (CheckBetter(_bestLikes, _currentPostData.Likes))
         {
-            bestLikeArea.SetActive(false);
+            bestTagOnBest.SetActive(false);
+            bestTagOnCurrent.SetActive(true);
+            bestLikeText.text = "최고기록!";
         }
         else
         {
-            bestLikeArea.SetActive(true);
-
-            int _bestLikes = DataManager.Instance.GetBestLikes();
-            if (_bestLikes != 0)
-                bestLikeText.text = "" + _bestLikes;
-            else
-                bestLikeText.text = "첫 게시물!";
-
-            if (CheckBetter(_bestLikes, _currentPostData.Likes))
-            {
-                bestTagOnBest.SetActive(false);
-                bestTagOnCurrent.SetActive(true);
-                bestLikeText.text = "최고기록!";
-            }
-            else
-            {
-                bestTagOnBest.SetActive(true);
-                bestTagOnCurrent.SetActive(false);
-            }
+            bestTagOnBest.SetActive(true);
+            bestTagOnCurrent.SetActive(false);
         }
+        
 
         currentLikeText.text = "" + _currentPostData.Likes;
 

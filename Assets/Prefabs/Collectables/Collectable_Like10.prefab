@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 7555473821093090056}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -97,7 +97,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2.2318542
+  m_Radius: 1.8156691
 --- !u!114 &890093426039106598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,8 +112,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dropToFloorSpeed: 1.5
   gravity: 2.5
-  spawnPerSecStart: 0.9
-  spawnPerSecMax: 8
+  spawnPerSecStart: 0.15
+  spawnPerSecMax: 0.6
   particleEffect: {fileID: 0}
   collectableType: 2
 --- !u!50 &-4811275784948177271
