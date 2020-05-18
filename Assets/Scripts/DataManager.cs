@@ -23,7 +23,8 @@ public class DataManager : MonoBehaviour
     public List<PostData> PostDatas = new List<PostData>();
 
     public PostData CurrentPost;
-    
+
+    public PostData LastPostData;
 
     void Awake()
     {
@@ -99,15 +100,21 @@ public class DataManager : MonoBehaviour
 
     public int AddFollowers(int likes)
     {
-        int AddedFollowers = likes / 3;
+        int AddedFollowers = CalcAddedFollowers(likes);
         Followers = Followers + AddedFollowers;
         CalculateLevel(Followers);
         SaveData();
 
         return AddedFollowers;
     }
+    public int CalcAddedFollowers(int likes)
+    {
+        int AddedFollowers = likes / 3;
+        return AddedFollowers;
+    }
 
-    private void CalculateLevel(int Followers)
+
+        private void CalculateLevel(int Followers)
     {
         Level currentLevel;
 
@@ -148,6 +155,27 @@ public class DataManager : MonoBehaviour
                 break;
         }
         CurrentLevel = currentLevel;
+    }
+
+    public int GetBestLikes()
+    {
+        return PostDatas[GetBestPostIndex()].Likes;
+    }
+
+    private int GetBestPostIndex()
+    {
+        int bestIndex = 0;
+        int currentBest = 0;
+        for (int i = 0; i < PostDatas.Count; i++)
+        {
+            if (currentBest < PostDatas[i].Likes)
+            {
+                currentBest = PostDatas[i].Likes;
+                bestIndex = i;
+            }
+
+        }
+        return bestIndex;
     }
 
     private class SaveObject

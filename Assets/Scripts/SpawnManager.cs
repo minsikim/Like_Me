@@ -49,12 +49,17 @@ public class SpawnManager : MonoBehaviour
 
         //Before Primary Collectable to SpawnList delete Particled Collectables from Primary Collecatable
         _primaryCollectable.GetComponent<Collectable>().particleEffect = null;
+
+        //reset scale
+        _primaryCollectable.transform.localScale = Vector3.one;
+        _secondaryCollectable.transform.localScale = Vector3.one;
+
         //And Override spawnPerSec Datas
         _primaryCollectable.GetComponent<Collectable>().spawnPerSecStart = 0.9f;
         _primaryCollectable.GetComponent<Collectable>().spawnPerSecMax = 8f;
         _secondaryCollectable.GetComponent<Collectable>().spawnPerSecStart = 0.15f;
         _secondaryCollectable.GetComponent<Collectable>().spawnPerSecMax = 0.6f;
-        _secondaryCollectable.transform.localScale *= 1.5f;
+        _secondaryCollectable.transform.localScale = Vector3.one * 1.5f;
 
         //Add collectables to Spawn List
         _spawnPrefabList.Add(_primaryCollectable);
@@ -84,7 +89,7 @@ public class SpawnManager : MonoBehaviour
                 DateTime spawnTime = DateTime.Now;
                 tempTime = spawnTime;
 
-                Vector3 positionSpawn = new Vector3(UnityEngine.Random.Range(Bounds.xMin, Bounds.xMax), Bounds.yMax + UnityEngine.Random.Range(1f, 5f), 0);
+                Vector3 positionSpawn = new Vector3(UnityEngine.Random.Range(Bounds.xMin, Bounds.xMax), Bounds.yMax + UnityEngine.Random.Range(5f, 25f), 0);
                 GameObject newCollectable = Instantiate(collectablePrefab, positionSpawn, Quaternion.identity);
                 newCollectable.transform.parent = _collectableContainer.transform;
             }

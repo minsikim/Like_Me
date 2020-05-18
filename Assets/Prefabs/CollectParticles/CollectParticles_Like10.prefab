@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3351911528716003996}
   - component: {fileID: 1187954634598232450}
   m_Layer: 0
-  m_Name: Like10Particles
+  m_Name: CollectParticles_Like10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,4 +48,4 @@ MonoBehaviour:
       type: 3}
     CountRange: {x: 1, y: 5}
     Scale: 0.7
-    ExplosionPower: 150
+    ExplosionPower: 1000

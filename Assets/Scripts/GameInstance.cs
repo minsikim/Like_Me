@@ -52,4 +52,12 @@ public class GameInstance : MonoBehaviour
             onStartGame();
         }
     }
+    public event Action onGameOver;
+    public void GameOver()
+    {
+        if (onGameOver != null)
+        {
+            onGameOver();
+        }
+    }
 }

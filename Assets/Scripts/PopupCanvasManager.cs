@@ -57,16 +57,4 @@ public class PopupCanvasManager : MonoBehaviour
         Debug.Log("Close All popup!");
     }
 
-
-    //IEnumerator ClosePopup()
-    //{
-    //    Color c = BackPanel.GetComponent<Image>().color;
-    //    while(BackPanel.GetComponent<Image>().color.a > 0)
-    //    {
-    //        c = new Color(c.r, c.g, c.b, c.a - Time.deltaTime);
-    //        BackPanel.GetComponent<Image>().color = c;
-    //    }
-    //    yield return new WaitForSeconds(2f);
-    //    BackPanel.SetActive(false);
-    //}
 }

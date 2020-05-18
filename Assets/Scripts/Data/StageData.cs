@@ -9,7 +9,7 @@ public class StageData : ScriptableObject
     public List<StageSetting> StageSettings;
     public StageSetting GetStageData(Level level)
     {
-        StageSetting stageSettings = new StageSetting();
+        StageSetting stageSettings = StageSettings[0];
 
         foreach (StageSetting s in StageSettings)
         {
@@ -28,4 +28,5 @@ public struct StageSetting
     public CollectableType PrimaryCollectable;
     public CollectableType SecondaryCollectable;
     public string StageName;
+    public int FollowerCondition;
 }

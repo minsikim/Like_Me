@@ -4,17 +4,6 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 
-public class Bounds
-{
-    public static float xMax { get; set; }
-    public static float xMin { get; set; }
-    public static float yMax { get; set; }
-    public static float yMin { get; set; }
-
-}
-
-
-
 public class GameSceneManager : MonoBehaviour
 {
     public static GameSceneManager current;
@@ -41,8 +30,6 @@ public class GameSceneManager : MonoBehaviour
     private GameObject _gameoverCanvas;
     [SerializeField]
     private GameObject _controls;
-    [SerializeField]
-    private GameObject _playButton;
     [SerializeField]
     private GameObject _gameInfoContainer;
 
@@ -73,10 +60,6 @@ public class GameSceneManager : MonoBehaviour
     }
     void Start()
     {
-        Bounds.xMin = -3.8f;
-        Bounds.xMax = 3.6f;
-        Bounds.yMin = -1.8f;
-        Bounds.yMax = 6.3f;
 
         currentLevel        = DataManager.Instance.CurrentLevel;
         _userNameText.text  = DataManager.Instance.UserName;
@@ -115,14 +98,13 @@ public class GameSceneManager : MonoBehaviour
 
     public void StartGame()
     {
-        _background.GetComponent<Animator>().SetBool("Playing", true);
+        _background.transform.GetChild(0).GetComponent<Animator>().SetBool("Playing", true);
 
         if (!player.GetComponent<Player>()._isDead)
         {
             Debug.LogError("Can not start player is still alive");
         };
         _controls.SetActive(true);
-        _playButton.SetActive(false);
         GameoverUIDisable();
         //Disable Tutorial Canvas
         _tutorialCanvas.SetActive(false);
@@ -147,13 +129,17 @@ public class GameSceneManager : MonoBehaviour
     }
     public void OnGameOver()
     {
-        _background.GetComponent<Animator>().SetBool("Playing", false);
+        //Set Post Datas;
+        int addedFollowers = DataManager.Instance.AddFollowers(Likes);
+        SavePost();
+
+        //Set popup w/ above Data;
+        PopupCanvasManager.Instance.OpenPopup(PopupCanvasManager.Instance.AfterGamePopupPrefab);
+
+        _background.transform.GetChild(0).GetComponent<Animator>().SetBool("Playing", false);
 
         _controls.SetActive(false);
-        _playButton.SetActive(true);
-        //Add Followers
-        _gameoverLikeText.text = Likes.ToString();
-        int addedFollowers = DataManager.Instance.AddFollowers(Likes);
+        
         _follwerText.text = "+" + addedFollowers.ToString();
         //Delete all collectables from container
         foreach (Transform p in _collectableContainer.transform)
@@ -174,7 +160,7 @@ public class GameSceneManager : MonoBehaviour
 
         _playing = false;
 
-        SavePost();
+        
     }
 
     public void GameoverUIEnable()
@@ -235,9 +221,10 @@ public class GameSceneManager : MonoBehaviour
             id = Guid.NewGuid().ToString(),
             SpriteIndex = UnityEngine.Random.Range(0, postImages.Images.Count),
             Likes = Likes,
-            PostTime = DateTime.Now.ToString("MM/dd/yyyy h:mm tt")
-
+            PostTime = DateTime.Now.ToString("MM/dd/yyyy h:mm tt"),
+            PlayTimeSeconds = (int)(DateTime.Now - _startTime).TotalSeconds
         };
+        DataManager.Instance.LastPostData = pD;
         DataManager.Instance.PostDatas.Add(pD);
         DataManager.Instance.SaveData();
     }

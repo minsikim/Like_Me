@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PostController : MonoBehaviour
 {
     public PostData postData;
 
+    public Text LikeText;
     public GameObject BestTag;
 
     public bool best;
@@ -21,6 +23,7 @@ public class PostController : MonoBehaviour
         {
             BestTag.SetActive(false);
         }
+        LikeText.text = "" + postData.Likes;
     }
 
     public void OnLoadPostScene()

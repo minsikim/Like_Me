@@ -1117,9 +1117,9 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: a8c9f94667b12144ba4d8b171aa56625, type: 3}
     m_FontSize: 35
-    m_FontStyle: 1
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 41
@@ -1270,9 +1270,9 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: a8c9f94667b12144ba4d8b171aa56625, type: 3}
     m_FontSize: 35
-    m_FontStyle: 1
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 41
@@ -2310,6 +2310,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a85f3d1c10038f44081f47b3f3150234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentLevelText: {fileID: 2048302914}
+  targetLevelText: {fileID: 4120850600498376473}
+  LevelProgression: {fileID: 1441991394}
+  LevelProgressionText: {fileID: 2169124538418670521}
+  primaryCollectableImage: {fileID: 2469146268136931167}
+  secondaryCollectableImage: {fileID: 7744079543616790895}
+  primaryCollectableText: {fileID: 4281672349788205510}
+  secondaryCollectableText: {fileID: 1898265754126091367}
+  stageData: {fileID: 11400000, guid: 19c8ab9b66372ea41b32e775ba26d57d, type: 2}
+  collectableData: {fileID: 11400000, guid: 178ee40fe18a9d64c8548ae749058e4b, type: 2}
 --- !u!1 &5149291604719627995
 GameObject:
   m_ObjectHideFlags: 0

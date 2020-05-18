@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 7555473821093090056}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3375, y: 0.3375, z: 0.3375}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -111,11 +111,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropToFloorSpeed: 1.5
-  gravity: 0.55
-  spawnPerSecStart: 0.15
-  spawnPerSecMax: 0.6
-  particleEffect: {fileID: 9109570832995849331, guid: 2cf0955b08e54eb42ad8a3ab901ac4a6,
-    type: 3}
+  gravity: 2.5
+  spawnPerSecStart: 0.9
+  spawnPerSecMax: 8
+  particleEffect: {fileID: 0}
   collectableType: 2
 --- !u!50 &-4811275784948177271
 Rigidbody2D:

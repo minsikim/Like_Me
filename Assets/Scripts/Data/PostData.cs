@@ -8,4 +8,5 @@ public struct PostData
     public int SpriteIndex;
     public int Likes;
     public string PostTime;
+    public float PlayTimeSeconds;
 }

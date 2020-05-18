@@ -138,7 +138,7 @@ public class Collectable : MonoBehaviour
 
         if(particleEffect != null)
         {
-            Instantiate(particleEffect, transform.position, transform.rotation);
+            Instantiate(particleEffect, transform.position + (Vector3.up * (Bounds.xMax - Bounds.xMin) * 0.05f), transform.rotation);
         }
 
         Destroy(gameObject);
