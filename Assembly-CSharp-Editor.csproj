@@ -68,14 +68,6 @@
     <Compile Include="Assets\Assets\GameSparks\Editor\GameSparksRestWindow.cs" />
     <Compile Include="Assets\Assets\GameSparks\Editor\GameSparksSettingsEditor.cs" />
     <Compile Include="Assets\Assets\GameSparks\Editor\GameSparksUnityInspector.cs" />
-    <Compile Include="Assets\Assets\GooglePlayGames\Editor\GPGSAndroidSetupUI.cs" />
-    <Compile Include="Assets\Assets\GooglePlayGames\Editor\GPGSDocsUI.cs" />
-    <Compile Include="Assets\Assets\GooglePlayGames\Editor\GPGSPostBuild.cs" />
-    <Compile Include="Assets\Assets\GooglePlayGames\Editor\GPGSProjectSettings.cs" />
-    <Compile Include="Assets\Assets\GooglePlayGames\Editor\GPGSStrings.cs" />
-    <Compile Include="Assets\Assets\GooglePlayGames\Editor\GPGSUpgrader.cs" />
-    <Compile Include="Assets\Assets\GooglePlayGames\Editor\GPGSUtil.cs" />
-    <Compile Include="Assets\Assets\GooglePlayGames\Editor\NearbyConnectionUI.cs" />
     <Compile Include="Assets\Assets\ProceduralUIImage\Editor\FreeModifierEditor.cs" />
     <Compile Include="Assets\Assets\ProceduralUIImage\Editor\ModifierUtility.cs" />
     <Compile Include="Assets\Assets\ProceduralUIImage\Editor\ProceduralImageEditor.cs" />
@@ -87,30 +79,13 @@
     <Compile Include="Assets\Scripts\Editor\SoundEditorWindow.cs" />
     <Compile Include="Assets\Scripts\Editor\Utils\EditorUtils.cs" />
     <None Include="Assets\Assets\PlayServicesResolver\Editor\play-services-resolver_v1.2.105.0.txt" />
-    <None Include="Assets\Assets\GooglePlayGames\Editor\GooglePlayGamesPlugin_v0.9.64.txt" />
-    <None Include="Assets\Assets\GooglePlayGames\Editor\GooglePlayGamesPluginDependencies.xml" />
-    <None Include="Assets\Assets\GooglePlayGames\Editor\template-GameInfo.txt" />
-    <None Include="Assets\Assets\GooglePlayGames\Editor\template-AndroidManifest.txt" />
-    <None Include="Assets\Assets\GooglePlayGames\Editor\m2repository\com\google\games\gpgs-plugin-support\maven-metadata.xml" />
-    <None Include="Assets\Assets\GooglePlayGames\Editor\template-Constants.txt" />
-    <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
-    </Reference>
+    <None Include="Assets\Firebase\Editor\FirebaseDatabase_version-6.14.0_manifest.txt" />
+    <None Include="Assets\Firebase\Editor\AppDependencies.xml" />
+    <None Include="Assets\ExternalDependencyManager\Editor\external-dependency-manager_version-1.2.153_manifest.txt" />
+    <None Include="Assets\ExternalDependencyManager\Editor\GoogleRegistries.xml" />
+    <None Include="Assets\Firebase\Editor\FirebaseAuth_version-6.14.0_manifest.txt" />
+    <None Include="Assets\Firebase\Editor\AuthDependencies.xml" />
+    <None Include="Assets\Firebase\Editor\DatabaseDependencies.xml" />
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.10f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
     </Reference>
@@ -365,6 +340,36 @@
     </Reference>
     <Reference Include="UnityEditor.Purchasing">
       <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.unity.purchasing@2.0.6/Editor/UnityEditor.Purchasing.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.App">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Firebase/Plugins/Firebase.App.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Platform">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Firebase/Plugins/Firebase.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tasks">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Parse/Plugins/dotNet45/Unity.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.MiniJson">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Firebase/Plugins/Google.MiniJson.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.VersionHandler">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/ExternalDependencyManager/Editor/Google.VersionHandler.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Editor">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Firebase/Editor/Firebase.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Auth">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Firebase/Plugins/Firebase.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Compat">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Parse/Plugins/dotNet45/Unity.Compat.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.TaskExtension">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Firebase/Plugins/Firebase.TaskExtension.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Database">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Firebase/Plugins/Firebase.Database.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.10f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
