@@ -302,62 +302,29 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
-    <Reference Include="Google.IOSResolver_v1.2.152">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/ExternalDependencyManager/Editor/Google.IOSResolver_v1.2.152.dll</HintPath>
+    <Reference Include="BouncyCastle_GameSparks">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Assets/GameSparks/Plugins/BouncyCastle_GameSparks.dll</HintPath>
     </Reference>
-    <Reference Include="Google.JarResolver_v1.2.152">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/ExternalDependencyManager/Editor/Google.JarResolver_v1.2.152.dll</HintPath>
+    <Reference Include="GameSparks.Api">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Assets/GameSparks/Plugins/GameSparks.Api.dll</HintPath>
     </Reference>
-    <Reference Include="Google.PackageManagerResolver_v1.2.152">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/ExternalDependencyManager/Editor/Google.PackageManagerResolver_v1.2.152.dll</HintPath>
+    <Reference Include="GameSparks">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Assets/GameSparks/Plugins/GameSparks.dll</HintPath>
     </Reference>
-    <Reference Include="Google.VersionHandlerImpl_v1.2.152">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/ExternalDependencyManager/Editor/Google.VersionHandlerImpl_v1.2.152.dll</HintPath>
+    <Reference Include="GameSparksRT">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Assets/GameSparks/Plugins/GameSparksRT.dll</HintPath>
     </Reference>
-    <Reference Include="Firebase.Analytics">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Firebase/Plugins/Firebase.Analytics.dll</HintPath>
+    <Reference Include="Google.IOSResolver_v1.2.105.0">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Assets/PlayServicesResolver/Editor/Google.IOSResolver_v1.2.105.0.dll</HintPath>
     </Reference>
-    <Reference Include="Google.IOSResolver_v1.2.153">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.google.external-dependency-manager@1.2.153/ExternalDependencyManager/Editor/Google.IOSResolver_v1.2.153.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.JarResolver_v1.2.153">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.google.external-dependency-manager@1.2.153/ExternalDependencyManager/Editor/Google.JarResolver_v1.2.153.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.PackageManagerResolver_v1.2.153">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.google.external-dependency-manager@1.2.153/ExternalDependencyManager/Editor/Google.PackageManagerResolver_v1.2.153.dll</HintPath>
+    <Reference Include="Google.JarResolver_v1.2.105.0">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Assets/PlayServicesResolver/Editor/Google.JarResolver_v1.2.105.0.dll</HintPath>
     </Reference>
     <Reference Include="Google.VersionHandler">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.google.external-dependency-manager@1.2.153/ExternalDependencyManager/Editor/Google.VersionHandler.dll</HintPath>
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Assets/PlayServicesResolver/Editor/Google.VersionHandler.dll</HintPath>
     </Reference>
-    <Reference Include="Google.VersionHandlerImpl_v1.2.153">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.google.external-dependency-manager@1.2.153/ExternalDependencyManager/Editor/Google.VersionHandlerImpl_v1.2.153.dll</HintPath>
-    </Reference>
-    <Reference Include="Firebase.Editor">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.google.firebase.app@6.14.0/Firebase/Editor/Firebase.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Firebase.App">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.google.firebase.app@6.14.0/Firebase/Plugins/Firebase.App.dll</HintPath>
-    </Reference>
-    <Reference Include="Firebase.Platform">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.google.firebase.app@6.14.0/Firebase/Plugins/Firebase.Platform.dll</HintPath>
-    </Reference>
-    <Reference Include="Firebase.TaskExtension">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.google.firebase.app@6.14.0/Firebase/Plugins/Firebase.TaskExtension.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.MiniJson">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.google.firebase.app@6.14.0/Firebase/Plugins/Google.MiniJson.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Compat">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.google.firebase.app@6.14.0/Parse/Plugins/dotNet45/Unity.Compat.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Tasks">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.google.firebase.app@6.14.0/Parse/Plugins/dotNet45/Unity.Tasks.dll</HintPath>
-    </Reference>
-    <Reference Include="Firebase.Auth">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.google.firebase.auth@6.14.0/Firebase/Plugins/Firebase.Auth.dll</HintPath>
-    </Reference>
-    <Reference Include="Firebase.Database">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.google.firebase.database@6.14.0/Firebase/Plugins/Firebase.Database.dll</HintPath>
+    <Reference Include="Google.VersionHandlerImpl_v1.2.105.0">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Assets/PlayServicesResolver/Editor/Google.VersionHandlerImpl_v1.2.105.0.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
