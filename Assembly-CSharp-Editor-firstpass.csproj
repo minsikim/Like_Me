@@ -68,6 +68,24 @@
     <Compile Include="Assets\Standard Assets\Editor\Water\Water4\SpecularLightingEditor.cs" />
     <Compile Include="Assets\Standard Assets\Editor\Water\Water4\WaterBaseEditor.cs" />
     <Compile Include="Assets\Standard Assets\Editor\Water\Water4\WaterEditorUtility.cs" />
+    <Reference Include="Unity.Timeline.Editor">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro.Editor">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Timeline">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.CollabProxy.Editor">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.DataPrivacy">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.10f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
     </Reference>
@@ -296,18 +314,6 @@
     <Reference Include="GameSparksRT">
       <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Assets/GameSparks/Plugins/GameSparksRT.dll</HintPath>
     </Reference>
-    <Reference Include="Google.IOSResolver_v1.2.105.0">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Assets/PlayServicesResolver/Editor/Google.IOSResolver_v1.2.105.0.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.JarResolver_v1.2.105.0">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Assets/PlayServicesResolver/Editor/Google.JarResolver_v1.2.105.0.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.VersionHandler">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Assets/PlayServicesResolver/Editor/Google.VersionHandler.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.VersionHandlerImpl_v1.2.105.0">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Assets/PlayServicesResolver/Editor/Google.VersionHandlerImpl_v1.2.105.0.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
     </Reference>
@@ -324,34 +330,46 @@
       <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.unity.purchasing@2.0.6/Editor/UnityEditor.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="Firebase.App">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Firebase/Plugins/Firebase.App.dll</HintPath>
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.google.firebase.app@6.14.0/Firebase/Plugins/Firebase.App.dll</HintPath>
     </Reference>
     <Reference Include="Firebase.Platform">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Firebase/Plugins/Firebase.Platform.dll</HintPath>
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.google.firebase.app@6.14.0/Firebase/Plugins/Firebase.Platform.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Tasks">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Parse/Plugins/dotNet45/Unity.Tasks.dll</HintPath>
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.google.firebase.app@6.14.0/Parse/Plugins/dotNet45/Unity.Tasks.dll</HintPath>
     </Reference>
     <Reference Include="Google.MiniJson">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Firebase/Plugins/Google.MiniJson.dll</HintPath>
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.google.firebase.app@6.14.0/Firebase/Plugins/Google.MiniJson.dll</HintPath>
     </Reference>
     <Reference Include="Google.VersionHandler">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/ExternalDependencyManager/Editor/Google.VersionHandler.dll</HintPath>
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.google.external-dependency-manager@1.2.155/ExternalDependencyManager/Editor/Google.VersionHandler.dll</HintPath>
     </Reference>
     <Reference Include="Firebase.Editor">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Firebase/Editor/Firebase.Editor.dll</HintPath>
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.google.firebase.app@6.14.0/Firebase/Editor/Firebase.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Firebase.Auth">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Firebase/Plugins/Firebase.Auth.dll</HintPath>
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.google.firebase.auth@6.14.0/Firebase/Plugins/Firebase.Auth.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Compat">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Parse/Plugins/dotNet45/Unity.Compat.dll</HintPath>
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.google.firebase.app@6.14.0/Parse/Plugins/dotNet45/Unity.Compat.dll</HintPath>
     </Reference>
     <Reference Include="Firebase.TaskExtension">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Firebase/Plugins/Firebase.TaskExtension.dll</HintPath>
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.google.firebase.app@6.14.0/Firebase/Plugins/Firebase.TaskExtension.dll</HintPath>
     </Reference>
     <Reference Include="Firebase.Database">
-      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Assets/Firebase/Plugins/Firebase.Database.dll</HintPath>
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.google.firebase.database@6.14.0/Firebase/Plugins/Firebase.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.VersionHandlerImpl_v1.2.155">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.google.external-dependency-manager@1.2.155/ExternalDependencyManager/Editor/Google.VersionHandlerImpl_v1.2.155.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.PackageManagerResolver_v1.2.155">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.google.external-dependency-manager@1.2.155/ExternalDependencyManager/Editor/Google.PackageManagerResolver_v1.2.155.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.JarResolver_v1.2.155">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.google.external-dependency-manager@1.2.155/ExternalDependencyManager/Editor/Google.JarResolver_v1.2.155.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.IOSResolver_v1.2.155">
+      <HintPath>C:/Users/user/Documents/GitHub/Like_Me/Library/PackageCache/com.google.external-dependency-manager@1.2.155/ExternalDependencyManager/Editor/Google.IOSResolver_v1.2.155.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.10f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
