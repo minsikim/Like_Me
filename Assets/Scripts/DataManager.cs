@@ -41,7 +41,10 @@ public class DataManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
 
+    private void Start()
+    {
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => {
             var dependencyStatus = task.Result;
             if (dependencyStatus == DependencyStatus.Available)
@@ -52,6 +55,9 @@ public class DataManager : MonoBehaviour
 
                 // Set a flag here to indicate whether Firebase is ready to use by your app.
                 Debug.Log("Firebase Loaded!");
+                FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://likeme-93469.firebaseio.com/");
+                mDatabaseRef = FirebaseDatabase.DefaultInstance.RootReference;
+                Debug.Log("Firebase Reference Added: " + mDatabaseRef.ToString());
             }
             else
             {
@@ -60,12 +66,6 @@ public class DataManager : MonoBehaviour
                 // Firebase Unity SDK is not safe to use here.
             }
         });
-    }
-
-    private void Start()
-    {
-        FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://likeme-93469.firebaseio.com/");
-        mDatabaseRef = FirebaseDatabase.DefaultInstance.RootReference;
 
         LoadData();
     }
@@ -114,8 +114,10 @@ public class DataManager : MonoBehaviour
             postDatas = PostDatas
         };
         string _jsonData = JsonUtility.ToJson(saveObject);
+        Debug.Log("Before Writing File: " + mDatabaseRef.ToString());
         System.IO.File.WriteAllText(Application.persistentDataPath + USER_DATA_PATH, _jsonData);
 
+        Debug.Log("Firebase SaveData, before calling SetRawJsonValueAsync Ref toString: " + mDatabaseRef.ToString());
         mDatabaseRef.Child("users").Child(id).SetRawJsonValueAsync(_jsonData);
 
         Debug.Log("Saved:" + _jsonData);
