@@ -28,10 +28,10 @@ public class AudioChannelController : MonoBehaviour
 	private bool _defaultLoop = false;
     public bool DefaultLoop { get { return _defaultLoop; } }
 
-	private Dictionary<string, AudioSource> _audioSourceDictionary;
-	private Dictionary<string, AudioClip> _audioDictionary;
+    private Dictionary<string, AudioSource> _audioSourceDictionary;
+    private Dictionary<string, AudioClip> _audioDictionary;
 
-	private AudioSource _firstAudioSource = null;
+    private AudioSource _firstAudioSource = null;
 
 	private void Awake()
 	{

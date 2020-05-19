@@ -48,9 +48,9 @@ MonoBehaviour:
       type: 3}
     CountRange: {x: 1, y: 3}
     Scale: 0.5
-    ExplosionPower: 150
+    ExplosionPower: 1000
   - Prefab: {fileID: 3348148127913954894, guid: 1419c6de99edecf4dbd9180b551793bb,
       type: 3}
     CountRange: {x: 1, y: 3}
     Scale: 0.7
-    ExplosionPower: 150
+    ExplosionPower: 1000

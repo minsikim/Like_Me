@@ -20,6 +20,9 @@ public class Player : MonoBehaviour
 
     private int _moving;
 
+    private bool _rightButton = false;
+    private bool _leftButton = false;
+
     void Awake()
     {
         current = this;
@@ -73,7 +76,8 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.RightArrow))
         {
             _direction = 1f;
-        }else if (Input.GetKey(KeyCode.LeftArrow))
+        }
+        else if (Input.GetKey(KeyCode.LeftArrow))
         {
             _direction = -1f;
         }
@@ -168,6 +172,42 @@ public class Player : MonoBehaviour
     {
         //오른쪽 + 왼쪽 - 제자리 0
         _direction = directionX;
+    }
+
+    public void OnRightDown()
+    {
+        _rightButton = true;
+        setDirection(1f);
+    }
+    public void OnRightUp()
+    {
+        _rightButton = false;
+        if (_leftButton)
+        {
+            return;
+        }
+        else
+        {
+            setDirection(0f);
+        }
+    }
+
+    public void OnLeftDown()
+    {
+        _leftButton = true;
+        setDirection(-1f);
+    }
+    public void OnLeftUp()
+    {
+        _leftButton = false;
+        if (_rightButton)
+        {
+            return;
+        }
+        else
+        {
+            setDirection(0f);
+        }
     }
 
     public void SpawnOverHeadText(int amount)

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,8 +7,6 @@ public class GameInstance : MonoBehaviour
 {
     private static GameInstance _instance;
     public static GameInstance Instance { get { return _instance; } }
-
-    public AudioManager _audioManager;
 
     private void Awake()
     {
@@ -22,34 +21,43 @@ public class GameInstance : MonoBehaviour
         }
 
         Application.targetFrameRate = 60;
-
-        _audioManager = Object.FindObjectOfType<AudioManager>();
     }
     private void Start()
     {
-        Invoke("StartGame", 2.0f);
+#if UNITY_EDITOR
+        if(SceneManager.GetActiveScene().name == "_Preload")
+        {
+            Invoke("ToGameScene", 2.0f);
+        }
+#else
+        Invoke("ToGameScene", 2.0f);
+#endif
     }
 
-    public void StartGame()
+    public void ToGameScene()
     {
-#if UNITY_EDITOR
-
-#else
-        SceneManager.LoadScene(1);
-#endif
-        //if (DataManager.Instance.Loaded)
-        //{
-        //    SceneManager.LoadScene(2);
-        //}
-        //else
-        //{
-        //    SceneManager.LoadScene(1);
-        //}
+        SceneManager.LoadScene("FirstPlay");
     }
 
     public void QuitApplication()
     {
         Application.Quit();
     }
-     
+
+    public event Action onStartGame;
+    public void StartGame()
+    {
+        if(onStartGame != null)
+        {
+            onStartGame();
+        }
+    }
+    public event Action onGameOver;
+    public void GameOver()
+    {
+        if (onGameOver != null)
+        {
+            onGameOver();
+        }
+    }
 }

@@ -1,0 +1,64 @@
+{
+  "project_info": {
+    "project_number": "866729425513",
+    "firebase_url": "https://likeme-93469.firebaseio.com",
+    "project_id": "likeme-93469",
+    "storage_bucket": "likeme-93469.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:866729425513:android:62ddbd6c1897acd3e9c0f8",
+        "android_client_info": {
+          "package_name": "com.WaywayInc.LikeMe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "866729425513-reholdfkr45mcgksa3o29jgip3hd7gds.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.WaywayInc.LikeMe",
+            "certificate_hash": "8db992568224c9fedba9ebe55d0cd30fa2051654"
+          }
+        },
+        {
+          "client_id": "866729425513-esht4tple95hil5h2hgsjdj38pulsu7q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.WaywayInc.LikeMe",
+            "certificate_hash": "b5ca71331a2e27a08dce2d84a9b00ba70bdd3abe"
+          }
+        },
+        {
+          "client_id": "866729425513-7gjhiie7l440jjsifv3p35kuppprh3v7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBo7bPwiQQjwbK0wzjq5YTnXn0lGn2CAfk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "866729425513-7gjhiie7l440jjsifv3p35kuppprh3v7.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "866729425513-90311m3fiqauijh9h1tj7m7nslhouhvc.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.WaywayInc.LikeMe",
+                "app_store_id": "1513873587"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

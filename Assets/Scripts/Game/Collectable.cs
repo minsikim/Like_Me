@@ -20,7 +20,7 @@ public class Collectable : MonoBehaviour
     private void Awake()
     {
         gameObject.GetComponent<Rigidbody2D>().gravityScale = gravity;
-        _sfxController = GameInstance.Instance._audioManager.SFXController;
+        _sfxController = AudioManager.Instance.SFXController;
     }
 
     void Start()
@@ -138,7 +138,7 @@ public class Collectable : MonoBehaviour
 
         if(particleEffect != null)
         {
-            Instantiate(particleEffect, transform.position, transform.rotation);
+            Instantiate(particleEffect, transform.position + (Vector3.up * (Bounds.xMax - Bounds.xMin) * 0.05f), transform.rotation);
         }
 
         Destroy(gameObject);

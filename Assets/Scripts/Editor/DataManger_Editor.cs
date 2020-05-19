@@ -17,6 +17,7 @@ public class DataManger_Editor : Editor
     
     public void DeleteData()
     {
+        System.IO.File.Delete(Application.persistentDataPath + DataManager.USER_DATA_PATH);
         Debug.LogError("Data Deleted!");
     }
 

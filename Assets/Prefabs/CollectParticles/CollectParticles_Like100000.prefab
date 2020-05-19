@@ -48,4 +48,4 @@ MonoBehaviour:
       type: 3}
     CountRange: {x: 1, y: 5}
     Scale: 0.7
-    ExplosionPower: 150
+    ExplosionPower: 1000
